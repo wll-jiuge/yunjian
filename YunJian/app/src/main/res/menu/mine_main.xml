@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item1"
+        android:icon="@drawable/menu_1"
+        android:title="首页"></item>
+    <item
+        android:id="@+id/menu_item2"
+        android:icon="@drawable/menu_2"
+        android:title="任务"></item>
+    <item
+        android:id="@+id/menu_item3"
+        android:icon="@drawable/menu_3"
+        android:title="质量诊断"></item>
+    <item
+        android:id="@+id/menu_item4"
+        android:icon="@drawable/menu_4"
+        android:title="个人中心"></item>
+</menu>

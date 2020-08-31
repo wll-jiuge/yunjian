@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/xunjian_item_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_bgcolor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:text="@string/title_xunjian_item" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:background="@drawable/test_backgroudshape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:layout_marginBottom="@dimen/dimen_25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="@dimen/dimen_25dp"
+                android:layout_height="@dimen/dimen_25dp"
+                app:srcCompat="@mipmap/ic_xunjian_item" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_name" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_xunjianitem_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:layout_marginBottom="@dimen/dimen_25dp"
+            android:text="任务" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:background="@drawable/test_backgroudshape"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:layout_marginBottom="@dimen/dimen_25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="@dimen/dimen_25dp"
+                android:layout_height="@dimen/dimen_25dp"
+                app:srcCompat="@mipmap/ic_xunjian_item" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_jiancefangfa" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_xunjianitem_fangfa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:text="任务" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:background="@drawable/test_backgroudshape"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:layout_marginBottom="@dimen/dimen_25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="@dimen/dimen_25dp"
+                android:layout_height="@dimen/dimen_25dp"
+                app:srcCompat="@mipmap/ic_xunjian_item" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_jiancestandard" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_xunjianitem_standard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:text="任务" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:background="@drawable/test_backgroudshape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:layout_marginBottom="@dimen/dimen_25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="@dimen/dimen_25dp"
+                android:layout_height="@dimen/dimen_25dp"
+                app:srcCompat="@mipmap/ic_xunjian_item" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_jiancexiang" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:layout_marginBottom="@dimen/dimen_25dp"
+            android:background="@drawable/test_backgroudshape"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="@dimen/dimem_50dp"
+                android:layout_height="@dimen/dimem_50dp"
+                android:layout_gravity="right"
+                app:srcCompat="@mipmap/ic_xunjian_camera" />
+
+            <TextView
+                android:id="@+id/txt_xunjianitem_xiang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:text="任务" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_100dp"
+                android:text="@string/tap_hege" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_100dp"
+                android:text="@string/tap_buhege" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:orientation="horizontal">
+        <com.xuexiang.xui.widget.button.shadowbutton.ShadowButton
+            android:id="@+id/xunjian_item_submit"
+            android:layout_width="@dimen/dimen_110dp"
+            android:layout_height="@dimen/dimem_50dp"
+            android:gravity="center"
+            app:sb_alpha_pressed="40"
+            app:sb_color_pressed="@color/toolbar_bgcolor"
+            app:sb_color_unpressed="@color/edtext_normal"
+            android:text="@string/tap_submit">
+        </com.xuexiang.xui.widget.button.shadowbutton.ShadowButton>
+        <com.xuexiang.xui.widget.button.shadowbutton.ShadowButton
+            android:id="@+id/xunjian_item_save"
+            android:layout_width="@dimen/dimen_110dp"
+            android:layout_height="@dimen/dimem_50dp"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:gravity="center"
+            app:sb_alpha_pressed="40"
+            app:sb_color_pressed="@color/toolbar_bgcolor"
+            app:sb_color_unpressed="@color/edtext_normal"
+            android:text="@string/tap_save">
+        </com.xuexiang.xui.widget.button.shadowbutton.ShadowButton>
+        <com.xuexiang.xui.widget.button.shadowbutton.ShadowButton
+            android:id="@+id/xunjian_item_return"
+            android:layout_width="@dimen/dimen_110dp"
+            android:layout_height="@dimen/dimem_50dp"
+            android:gravity="center"
+            app:sb_alpha_pressed="40"
+            app:sb_color_pressed="@color/toolbar_bgcolor"
+            app:sb_color_unpressed="@color/edtext_normal"
+            android:text="@string/tap_return">
+        </com.xuexiang.xui.widget.button.shadowbutton.ShadowButton>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BaseBanner">
+    <!-- Banner高宽比,范围0-1,默认0.5(for LoopViewPager)-->
+    <attr format="float" name="bb_scale"/>
+    </declare-styleable>
+</resources>
