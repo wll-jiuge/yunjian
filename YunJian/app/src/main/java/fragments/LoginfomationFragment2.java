@@ -10,7 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.yunjian.R;
-
+/**
+ *@package fragments
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 日志信息--添加日志页面
+*/
 public class LoginfomationFragment2 extends Fragment {
     @Nullable
     @Override

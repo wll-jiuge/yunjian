@@ -11,6 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import com.yunjian.R;
 
+/**
+ *@package fragments
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 诊所页面--发起的项目
+*/
 public class ThirdFragment3 extends Fragment {
     @Nullable
     @Override

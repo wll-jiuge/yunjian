@@ -1,14 +1,13 @@
 package com.yunjian.entity;
 
 import java.io.Serializable;
-
+/**
+ * name : aaa
+ * method : 测试方法1
+ * standard : 测试标准一
+ * items : aaa数据项内容
+ */
 public class XunjianItemEntity implements Serializable {
-    /**
-     * name : aaa
-     * method : 测试方法1
-     * standard : 测试标准一
-     * items : aaa数据项内容
-     */
 
     private String name;
     private String method;

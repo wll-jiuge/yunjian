@@ -7,6 +7,12 @@ import android.os.Bundle;
 
 import static java.lang.Thread.sleep;
 
+/**
+ *@package com.yunjian
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 启动界面
+*/
 public class LunchActivity extends AppCompatActivity {
 
     @Override

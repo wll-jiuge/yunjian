@@ -2,10 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_mine"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Mine_Activity">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -19,10 +21,10 @@
             android:id="@+id/txt_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
             android:text="首页" />
 
     </androidx.appcompat.widget.Toolbar>
-
 
 
     <androidx.viewpager.widget.ViewPager
@@ -38,8 +40,7 @@
         android:layout_height="wrap_content"
         app:itemIconTint="@color/bottomnavigation_selected"
         app:itemTextColor="@color/bottomnavigation_selected"
-        android:background="@color/cardview_light_background"
+        android:background="@color/text_color"
         app:menu="@menu/mine_main">
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </LinearLayout>
