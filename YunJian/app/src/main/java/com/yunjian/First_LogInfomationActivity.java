@@ -32,7 +32,11 @@ import fragments.LoginfomationFragment3;
  * @date on 2020/9/6
  * @describe 首页 --日志信息页面
  */
+<<<<<<< HEAD
 public class First_LogInfomationActivity extends BaseActivity {
+=======
+public class First_LogInfomationActivity extends AppCompatActivity {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The Toolbar.
      */
@@ -95,9 +99,13 @@ public class First_LogInfomationActivity extends BaseActivity {
         fragments.add(new LoginfomationFragment3());
     }
 
+<<<<<<< HEAD
     /**
      * 适配器类
      */
+=======
+    //适配器类
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     private class ViewAdapter extends FragmentPagerAdapter {
         private List<Fragment> list;
 

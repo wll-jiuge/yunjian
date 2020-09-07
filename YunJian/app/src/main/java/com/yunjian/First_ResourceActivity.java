@@ -31,7 +31,11 @@ import fragments.ResourceFragment3;
  * @date on 2020/9/6
  * @describe 首页 --资源页面
  */
+<<<<<<< HEAD
 public class First_ResourceActivity extends BaseActivity {
+=======
+public class First_ResourceActivity extends AppCompatActivity {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The Toolbar.
      */

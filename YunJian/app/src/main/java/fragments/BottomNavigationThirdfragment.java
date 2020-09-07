@@ -25,7 +25,11 @@ import java.util.List;
  * @date on 2020/9/6
  * @describe 诊所fragment
  */
+<<<<<<< HEAD
 public class BottomNavigationThirdfragment extends BaseFragment {
+=======
+public class BottomNavigationThirdfragment extends Fragment {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The Tab layout.
      */

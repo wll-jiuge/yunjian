@@ -34,6 +34,7 @@ public class BaseActivity  extends AppCompatActivity {
      * @param c1s
      */
 
+<<<<<<< HEAD
     public void navigateTo(Class c1s){
         Intent intent = new Intent(mContext,c1s);
         startActivity(intent);
@@ -42,12 +43,20 @@ public class BaseActivity  extends AppCompatActivity {
     /**
      * Save stringto sp.
      * 存储token
+=======
+    /**
+     * Save stringto sp.存储token
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
      *
      * @param key   the key
      * @param value the value
      */
 
+<<<<<<< HEAD
     public void saveStringtoSp(String key,String value){
+=======
+    protected void saveStringtoSp(String key,String value){
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
         SharedPreferences sp = getSharedPreferences("sp_token",MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key,value);

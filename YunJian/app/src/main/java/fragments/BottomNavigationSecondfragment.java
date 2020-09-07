@@ -25,7 +25,11 @@ import java.util.List;
  * @date on 2020/9/6
  * @describe 任务界面
  */
+<<<<<<< HEAD
 public class BottomNavigationSecondfragment extends BaseFragment {
+=======
+public class BottomNavigationSecondfragment extends Fragment {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The Tab layout.
      */

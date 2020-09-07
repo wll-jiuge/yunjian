@@ -35,7 +35,11 @@ import data.DataProvider;
  *@author 吴立柳
  *@describe 首页fragment
 */
+<<<<<<< HEAD
 public class BottomNavigationFirstfragment extends BaseFragment {
+=======
+public class BottomNavigationFirstfragment extends Fragment {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * 轮播图组件
      */
@@ -100,33 +104,53 @@ public class BottomNavigationFirstfragment extends BaseFragment {
                 switch (i){
                     //巡检
                     case 0:{
+<<<<<<< HEAD
 //                        intent = new Intent(getActivity(), First_XunjianActivity.class);
 //                        startActivity(intent);
                         navigateTo(First_XunjianActivity.class);
+=======
+                        intent = new Intent(getActivity(), First_XunjianActivity.class);
+                        startActivity(intent);
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
                         intent=null;
                         break;
                     }
                     //日志信息
                     case 1:{
+<<<<<<< HEAD
 //                        intent = new Intent(getActivity(), First_LogInfomationActivity.class);
 //                        startActivity(intent);
                         navigateTo(First_LogInfomationActivity.class);
+=======
+                        intent = new Intent(getActivity(), First_LogInfomationActivity.class);
+                        startActivity(intent);
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
                         intent=null;
                         break;
                     }
                     //资源库
                     case 2:{
+<<<<<<< HEAD
 //                        intent = new Intent(getActivity(), First_ResourceActivity.class);
 //                        startActivity(intent);
                         navigateTo(First_ResourceActivity.class);
+=======
+                        intent = new Intent(getActivity(), First_ResourceActivity.class);
+                        startActivity(intent);
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
                         intent=null;
                         break;
                     }
                     //整改通知
                     case 3:
+<<<<<<< HEAD
 //                        intent = new Intent(getActivity(), First_NotificationActivity.class);
 //                        startActivity(intent);
                         navigateTo(First_NotificationActivity.class);
+=======
+                        intent = new Intent(getActivity(), First_NotificationActivity.class);
+                        startActivity(intent);
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
                         intent=null;
                         break;
                 }

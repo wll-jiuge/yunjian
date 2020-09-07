@@ -43,7 +43,11 @@ import static com.xuexiang.xui.XUI.getContext;
  *@author 吴立柳
  *@describe 主页面
 */
+<<<<<<< HEAD
 public class Mine_Activity extends BaseActivity {
+=======
+public class Mine_Activity extends AppCompatActivity {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The Toolbar.
      */

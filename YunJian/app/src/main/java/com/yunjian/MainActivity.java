@@ -22,7 +22,11 @@ import utils.XToastUtils;
  * @date on 2020/9/6
  * @describe 登录界面
  */
+<<<<<<< HEAD
 public class MainActivity extends BaseActivity {
+=======
+public class MainActivity extends AppCompatActivity {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The Btn login.
      */
@@ -89,7 +93,12 @@ public class MainActivity extends BaseActivity {
         else if(loginResponse.getCode() == 0){
 //                   将token保存到SharedPreferences文件中
 //            base.saveStringtoSp("token",token);
+<<<<<<< HEAD
            navigateTo(Mine_Activity.class);
+=======
+            Intent intent = new Intent(MainActivity.this, Mine_Activity.class);
+            startActivity(intent);
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
         }else
         {
             XToastUtils.toast("登录失败");

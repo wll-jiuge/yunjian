@@ -21,7 +21,11 @@ import fragments.minelist.Minelist_myaccount;
  * @date on 2020/9/6
  * @describe 我的页面 --列表
  */
+<<<<<<< HEAD
 public class MineListActivity extends BaseActivity {
+=======
+public class MineListActivity extends AppCompatActivity {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The View pager.
      */

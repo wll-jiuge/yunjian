@@ -27,7 +27,11 @@ import fragments.NotificationFragment;
  *@author 吴立柳
  *@describe  首页--通知页面
 */
+<<<<<<< HEAD
 public class First_NotificationActivity extends BaseActivity {
+=======
+public class First_NotificationActivity extends AppCompatActivity {
+>>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The Toolbar.
      */
