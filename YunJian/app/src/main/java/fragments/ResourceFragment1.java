@@ -10,7 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.yunjian.R;
-
+/**
+ *@package fragments
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 资源页面--图片页面
+*/
 public class ResourceFragment1 extends Fragment {
     @Nullable
     @Override

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    个人信息-->
+    <string-array name="myaccount_list">
+        <item>姓名:</item>
+        <item>性别:</item>
+        <item>角色:</item>
+        <item>公司:</item>
+        <item>部门:</item>
+        <item>工程:</item>
+    </string-array>
+</resources>

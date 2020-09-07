@@ -7,7 +7,13 @@ import android.os.Bundle;
 
 import static java.lang.Thread.sleep;
 
-public class LunchActivity extends AppCompatActivity {
+/**
+ *@package com.yunjian
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 启动界面
+*/
+public class LunchActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +29,9 @@ public class LunchActivity extends AppCompatActivity {
                         // 这里可以睡几秒钟，如果要放广告的话
                         try {
                             Thread.sleep(2000);
-                            Intent intent = new Intent(LunchActivity.this, MainActivity.class);
-                            startActivity(intent);
+                            navigateTo(MainActivity.class);
+//                            Intent intent = new Intent(LunchActivity.this, MainActivity.class);
+//                            startActivity(intent);
                             LunchActivity.this.finish();
                         } catch (InterruptedException e) {
                             e.printStackTrace();

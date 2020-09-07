@@ -11,6 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import com.yunjian.R;
 
+/**
+ *@package fragments
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 资源页面--文档页面
+*/
 public class ResourceFragment2 extends Fragment {
     @Nullable
     @Override

@@ -28,22 +28,46 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import fragments.Bottom_navigation_firstfragment;
-import fragments.Bottom_navigation_lastfragment;
-import fragments.Bottom_navigation_secondfragment;
-import fragments.Bottom_navigation_thirdfragment;
+import fragments.BottomNavigationFirstfragment;
+import fragments.BottomNavigationLastfragment;
+import fragments.BottomNavigationSecondfragment;
+import fragments.BottomNavigationThirdfragment;
 import utils.XToastUtils;
 
 import static com.xuexiang.xui.XUI.getContext;
 
 
-public class Mine_Activity extends AppCompatActivity {
+/**
+ *@package com.yunjian
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 主页面
+*/
+public class Mine_Activity extends BaseActivity {
+    /**
+     * The Toolbar.
+     */
     Toolbar toolbar;
+    /**
+     * The View pager.
+     */
     ViewPager viewPager;
+    /**
+     * The Txt toolbar.
+     */
     TextView txt_toolbar;
-    BottomNavigationView bottomNavigationView;  //引入底部导航栏和页面
-    List<Fragment> fragments;  //fragment集合
-    MenuItem menuItem;  //菜单项
+    /**
+     * 底部导航栏
+     */
+    BottomNavigationView bottomNavigationView;
+    /**
+     * The Fragments.
+     */
+    List<Fragment> fragments;
+    /**
+     * The Menu item.
+     */
+    MenuItem menuItem;
     /**
      * 扫描跳转Activity RequestCode
      */
@@ -61,20 +85,14 @@ public class Mine_Activity extends AppCompatActivity {
         bottomNavigationView=findViewById(R.id.navigation);
         toolbar = findViewById(R.id.toolbar);
         txt_toolbar = findViewById(R.id.txt_toolbar);
-
-//导航栏
         setSupportActionBar(toolbar);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
-//                    case R.id.add:{
-//                        Toast.makeText(Mine_Activity.this,"添加",Toast.LENGTH_SHORT).show();
-//                        break;
-//                    }
-                    case R.id.erweima:{ //处理二维码
+                    //处理二维码
+                    case R.id.erweima:{
                         XQRCode.startScan(Mine_Activity.this, REQUEST_CODE);
-
                         break;
                     }
                     default:
@@ -84,19 +102,16 @@ public class Mine_Activity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-        fragments = new ArrayList<>();  //实例化
-        fragments.add(new Bottom_navigation_firstfragment());
-        fragments.add(new Bottom_navigation_secondfragment());
-        fragments.add(new Bottom_navigation_thirdfragment());
-        fragments.add(new Bottom_navigation_lastfragment()); //加载fragment页面
+        //实例化fragments
+        fragments = new ArrayList<>();
+        fragments.add(new BottomNavigationFirstfragment());
+        fragments.add(new BottomNavigationSecondfragment());
+        fragments.add(new BottomNavigationThirdfragment());
+        fragments.add(new BottomNavigationLastfragment());
         MyAdapter adapter = new MyAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(adapter);
 
-//        通过底部导航改变页面
+        //通过底部导航改变页面
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -130,7 +145,6 @@ public class Mine_Activity extends AppCompatActivity {
         });
 
         //页面改变事件
-
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -139,10 +153,11 @@ public class Mine_Activity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if(menuItem==null){ //没有初始化,默认为首页
+                //没有初始化,默认为首页
+                if(menuItem==null){
                     menuItem = bottomNavigationView.getMenu().getItem(0);
                 }
-//                将上次的选择设为false,等待下次的选择
+               //将上次的选择设为false,等待下次的选择
                 menuItem.setChecked(false);
                 menuItem = bottomNavigationView.getMenu().getItem(position);
                 menuItem.setChecked(true);
@@ -154,14 +169,21 @@ public class Mine_Activity extends AppCompatActivity {
             }
         });
 
-
-
     }
-/*
-* 适配器类*/
+
+    /**
+     * 适配器类
+     */
     private class MyAdapter extends FragmentPagerAdapter{
         private List<Fragment> fragments;  //接收fragments
-        public MyAdapter(@NonNull FragmentManager fm, List<Fragment> fragments) {
+
+    /**
+     * Instantiates a new My adapter.
+     *
+     * @param fm        the fm
+     * @param fragments the fragments
+     */
+    public MyAdapter(@NonNull FragmentManager fm, List<Fragment> fragments) {
             super(fm);
             this.fragments = fragments;
         }
@@ -182,14 +204,23 @@ public class Mine_Activity extends AppCompatActivity {
     }
 
 
-    //重写菜单
-
+    /**
+     * 重写菜单方法
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.head_toolbar,menu);
         return true;
     }
-//使菜单显示图标
+
+    /**
+     * 使菜单显示图标
+     * @param featureId
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (menu != null) {

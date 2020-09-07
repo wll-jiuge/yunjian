@@ -2,20 +2,18 @@ package com.yunjian.entity;
 
 import java.io.Serializable;
 import java.util.List;
-
+/**
+ * msg : ok
+ * code : 0
+ * name : 不知名的路人甲
+ * sex : 男
+ * company : 中国建筑第六工程局
+ * role : 炮灰QAQ
+ * department : 部门A
+ * project : 项目A
+ * programs : ["项目A","项目B","项目C"]
+ */
 public class Personentity implements Serializable {
-
-    /**
-     * msg : ok
-     * code : 0
-     * name : 不知名的路人甲
-     * sex : 男
-     * company : 中国建筑第六工程局
-     * role : 炮灰QAQ
-     * department : 部门A
-     * project : 项目A
-     * programs : ["项目A","项目B","项目C"]
-     */
 
     private String msg;
     private int code;

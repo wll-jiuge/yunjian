@@ -1,13 +1,13 @@
 package com.yunjian.entity;
 
-public class LoginResponse {
+/**
+ * msg : succeed
+ * code : 0
+ * expire : 608455
+ * token : JgiGlovgwDBGvaplieaqkvrtBGbAbga
+ */
 
-    /**
-     * msg : succeed
-     * code : 0
-     * expire : 608455
-     * token : JgiGlovgwDBGvaplieaqkvrtBGbAbga
-     */
+public class LoginResponse {
 
     private String msg;
     private int code;

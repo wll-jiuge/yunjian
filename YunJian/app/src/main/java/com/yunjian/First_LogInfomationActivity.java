@@ -1,8 +1,5 @@
 package com.yunjian;
-/*
-*
-*
-* 日志页面*/
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,16 +24,43 @@ import fragments.LoginfomationFragment1;
 import fragments.LoginfomationFragment2;
 import fragments.LoginfomationFragment3;
 
-
-
-public class First_LogInfomation extends AppCompatActivity {
+/**
+ * The type First log infomation.
+ *
+ * @author 吴立柳
+ * @package com.yunjian
+ * @date on 2020/9/6
+ * @describe 首页 --日志信息页面
+ */
+public class First_LogInfomationActivity extends BaseActivity {
+    /**
+     * The Toolbar.
+     */
     Toolbar toolbar;
+    /**
+     * The View pager.
+     */
     ViewPager viewPager;
+    /**
+     * The Tab layout.
+     */
     TabLayout tabLayout;
+    /**
+     * The Text view.
+     */
     TextView textView;
+    /**
+     * The Title.
+     */
     String[] title = {"日志列表", "添加日志", "更多"};
+    /**
+     * The Loginformation normal.
+     */
     int[] loginformation_normal = new int[]{R.mipmap.ic_loginfomation_log_normal,
             R.mipmap.ic_loginfomation_addlog_normal,R.mipmap.ic_loginfomation_more_normal};
+    /**
+     * The Fragments.
+     */
     List<Fragment> fragments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +95,18 @@ public class First_LogInfomation extends AppCompatActivity {
         fragments.add(new LoginfomationFragment3());
     }
 
-    //适配器类
+    /**
+     * 适配器类
+     */
     private class ViewAdapter extends FragmentPagerAdapter {
         private List<Fragment> list;
+
+        /**
+         * Instantiates a new View adapter.
+         *
+         * @param fm   the fm
+         * @param list the list
+         */
         public ViewAdapter(@NonNull FragmentManager fm, List<Fragment> list) {
             super(fm);
             this.list = list;
@@ -97,7 +130,10 @@ public class First_LogInfomation extends AppCompatActivity {
             return title[position];
         }
     }
-//    tab选择事件处理
+
+    /**
+     * tab事件处理
+     */
     private void HandleTab(){
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -123,7 +159,10 @@ public class First_LogInfomation extends AppCompatActivity {
         });
     }
 
-//    tab选中
+    /**
+     * tab选中
+     * @param tab
+     */
     private void updateTab(TabLayout.Tab tab){
         String title ="";
         title=tab.getText().toString();
@@ -136,7 +175,11 @@ public class First_LogInfomation extends AppCompatActivity {
             tab.setIcon(R.mipmap.ic_loginfomation_more_selected);
         }
     }
-//  tab未选中
+
+    /**
+     * tab未选中
+     * @param tab
+     */
     private  void updateTabNormal(TabLayout.Tab tab){
         String title ="";
         title=tab.getText().toString();

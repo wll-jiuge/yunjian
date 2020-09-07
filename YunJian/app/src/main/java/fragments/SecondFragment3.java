@@ -20,7 +20,15 @@ import com.yunjian.entity.XunjianItemResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SecondFragment3 extends Fragment {
+/**
+ * The type Second fragment 3.
+ *
+ * @author 吴立柳
+ * @package fragments
+ * @date on 2020/9/6
+ * @describe 任务页面 --超时任务
+ */
+public class SecondFragment3 extends BaseFragment {
     private String res = "{\"msg\":\"ok\",\"listCounts\":5,\"code\":0,\"list\":[{\"name\":\"aaa\",\"method\":\"测试方法1\",\"standard\":\"测试标准一\",\"items\":\"aaa数据项内容\"},{\"name\":\"bbb\",\"method\":\"测试方法2\",\"standard\":\"测试标准二\",\"items\":\"bbb数据项内容\"},{\"name\":\"ccc\",\"method\":\"测试方法3\",\"standard\":\"测试标准三\",\"items\":\"ccc数据项内容\"},{\"name\":\"ddd\",\"method\":\"测试方法4\",\"standard\":\"测试标准四\",\"items\":\"ddd数据项内容\"},{\"name\":\"eee\",\"method\":\"测试方法5\",\"standard\":\"测试标准五\",\"items\":\"eee数据项内容\"}]}";
     @Nullable
     @Override
@@ -31,9 +39,11 @@ public class SecondFragment3 extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         XunjianItemResponse xunjianItemResponse = new Gson().fromJson(res,XunjianItemResponse.class);
-        if(xunjianItemResponse!=null&&xunjianItemResponse.getCode() == 0){//请求成功
+        //请求成功
+        if(xunjianItemResponse!=null&&xunjianItemResponse.getCode() == 0){
             List<XunjianItemEntity> data = xunjianItemResponse.getList();
-            TestAdapter testAdapter = new TestAdapter(getActivity(),data); //传入数据
+            //传入数据
+            TestAdapter testAdapter = new TestAdapter(getActivity(),data);
             recyclerView.setAdapter(testAdapter);
         }
 //        List<XunjianItemResponse> data = new ArrayList<>();

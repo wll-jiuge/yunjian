@@ -4,7 +4,7 @@
     <!-- 网络访问权限 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 摄像头调用权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <!--        android:networkSecurityConfig="@xml/network_security_config"-->
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -13,11 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".XunjianItemActivity"></activity>
-        <activity android:name=".First_Notification" />
-        <activity android:name=".First_Resource" />
-        <activity android:name=".First_LogInfomation" />
-        <activity android:name=".First_Xunjian" />
+        <activity android:name=".MineListActivity"></activity>
+        <activity android:name=".XunjianItemActivity" />
+        <activity android:name=".First_NotificationActivity" />
+        <activity android:name=".First_ResourceActivity" />
+        <activity android:name=".First_LogInfomationActivity" />
+        <activity android:name=".First_XunjianActivity" />
         <activity
             android:name=".LunchActivity"
             android:theme="@style/LunchStyle">

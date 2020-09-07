@@ -17,9 +17,30 @@ import java.util.List;
 
 import utils.XToastUtils;
 
-public class XunjianItemActivity extends AppCompatActivity {
-TextView xunjianitem_name,xunjianitem_method,xunjianitem_standard,xunjianitem_xiang;
-Intent intent;
+/**
+ * @author 吴立柳
+ * @package com.yunjian
+ * @date on 2020/9/6
+ * @describe 巡检页面 --列表展示
+ */
+public class XunjianItemActivity extends BaseActivity {
+    /**
+     * The Xunjianitem name.
+     */
+    TextView xunjianitem_name, /**
+     * The Xunjianitem method.
+     */
+    xunjianitem_method, /**
+     * The Xunjianitem standard.
+     */
+    xunjianitem_standard, /**
+     * The Xunjianitem xiang.
+     */
+    xunjianitem_xiang;
+    /**
+     * The Intent.
+     */
+    Intent intent;
 private XunjianItemEntity xunjianItemEntity;
 private int position;
     @Override
@@ -32,12 +53,20 @@ private int position;
         position = intent.getIntExtra("position",0);
         changetext();
     }
+
+    /**
+     * 初始化
+     */
     private void init(){
         xunjianitem_name = findViewById(R.id.txt_xunjianitem_name);
         xunjianitem_method = findViewById(R.id.txt_xunjianitem_fangfa);
         xunjianitem_standard = findViewById(R.id.txt_xunjianitem_standard);
         xunjianitem_xiang = findViewById(R.id.txt_xunjianitem_xiang);
     }
+
+    /**
+     * 列表信息更改
+     */
     private void changetext(){
         xunjianitem_name.setText(xunjianItemEntity.getName());
         xunjianitem_method.setText(xunjianItemEntity.getMethod());

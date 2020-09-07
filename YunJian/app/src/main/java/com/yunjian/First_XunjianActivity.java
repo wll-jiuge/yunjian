@@ -1,9 +1,4 @@
 package com.yunjian;
-/*
-*
-* 巡检页面
-* */
-
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,19 +27,44 @@ import fragments.SecondFragment1;
 import fragments.SecondFragment2;
 import fragments.SecondFragment3;
 
-public class First_Xunjian extends AppCompatActivity {
+/**
+ * The type First xunjian activity.
+ *
+ * @author 吴立柳
+ * @package com.yunjian
+ * @date on 2020/9/6
+ * @describe 首页 --巡检页面
+ */
+public class First_XunjianActivity extends BaseActivity {
+    /**
+     * The Tab layout.
+     */
     TabLayout tabLayout;
+    /**
+     * The View pager.
+     */
     ViewPager viewPager;
+    /**
+     * The Toolbar.
+     */
     Toolbar toolbar;
+    /**
+     * The Text view.
+     */
     TextView textView;
+    /**
+     * The Title.
+     */
     String[] title = {"当前任务", "已完成任务", "超时任务"};
+    /**
+     * The Fragments.
+     */
     List<Fragment> fragments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first__xunjian);
-
-//        初始化
+        //初始化
         tabLayout=findViewById(R.id.tablayout_xunjian);
         toolbar = findViewById(R.id.toolbar_xunjian);
         viewPager = findViewById(R.id.viewpager_xunjian);
@@ -64,7 +84,7 @@ public class First_Xunjian extends AppCompatActivity {
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(First_Xunjian.this,"新建任务",Toast.LENGTH_SHORT).show();
+                Toast.makeText(First_XunjianActivity.this,"新建任务",Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -72,7 +92,9 @@ public class First_Xunjian extends AppCompatActivity {
     }
 
 
-    //初始化fragments
+    /**
+     * 初始化fragment
+     */
     private void initFragments(){
         fragments = new ArrayList<>();
         fragments.add(new SecondFragment1());
@@ -80,9 +102,18 @@ public class First_Xunjian extends AppCompatActivity {
         fragments.add(new SecondFragment3());
     }
 
-    //适配器类
+    /**
+     * 适配器类
+     */
     private class ViewAdapter extends FragmentPagerAdapter {
         private List<Fragment> list;
+
+        /**
+         * Instantiates a new View adapter.
+         *
+         * @param fm   the fm
+         * @param list the list
+         */
         public ViewAdapter(@NonNull FragmentManager fm, List<Fragment> list) {
             super(fm);
             this.list = list;
@@ -99,7 +130,11 @@ public class First_Xunjian extends AppCompatActivity {
             return list.size();
         }
 
-        //进行关联
+        /**
+         * 进行关联
+         * @param position
+         * @return
+         */
         @Nullable
         @Override
         public CharSequence getPageTitle(int position) {
@@ -107,13 +142,23 @@ public class First_Xunjian extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * 重写菜单方法
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_xunjian,menu);
         return true;
     }
-    //使菜单显示图标
+
+    /**
+     * 使菜单显示图标
+     * @param featureId
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onMenuOpened(int featureId, Menu menu) {
         if (menu != null) {

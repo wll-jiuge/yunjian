@@ -23,14 +23,43 @@ import fragments.ResourceFragment1;
 import fragments.ResourceFragment2;
 import fragments.ResourceFragment3;
 
-public class First_Resource extends AppCompatActivity {
+/**
+ * The type First resource.
+ *
+ * @author 吴立柳
+ * @package com.yunjian
+ * @date on 2020/9/6
+ * @describe 首页 --资源页面
+ */
+public class First_ResourceActivity extends BaseActivity {
+    /**
+     * The Toolbar.
+     */
     Toolbar toolbar;
+    /**
+     * The View pager.
+     */
     ViewPager viewPager;
+    /**
+     * The Tab layout.
+     */
     TabLayout tabLayout;
+    /**
+     * The Text view.
+     */
     TextView textView;
+    /**
+     * The Title.
+     */
     String[] title = {"图片", "文档", "视频"};
+    /**
+     * The Resource normal.
+     */
     int[] resource_normal = new int[]{R.mipmap.ic_resource_image_normal,
             R.mipmap.ic_resource_file_normal,R.mipmap.ic_resource_video_normal};
+    /**
+     * The Fragments.
+     */
     List<Fragment> fragments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +79,9 @@ public class First_Resource extends AppCompatActivity {
 
     }
 
+    /**
+     * 初始化
+     */
     private void init(){
         toolbar=findViewById(R.id.toolbar_resource);
         viewPager=findViewById(R.id.viewpager_resource);
@@ -68,6 +100,13 @@ public class First_Resource extends AppCompatActivity {
     //适配器类
     private class ViewAdapter extends FragmentPagerAdapter {
         private List<Fragment> list;
+
+        /**
+         * Instantiates a new View adapter.
+         *
+         * @param fm   the fm
+         * @param list the list
+         */
         public ViewAdapter(@NonNull FragmentManager fm, List<Fragment> list) {
             super(fm);
             this.list = list;
@@ -91,7 +130,10 @@ public class First_Resource extends AppCompatActivity {
             return title[position];
         }
     }
-    //    tab选择事件处理
+
+    /**
+     * tab事件处理
+     */
     private void HandleTab(){
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -117,7 +159,10 @@ public class First_Resource extends AppCompatActivity {
         });
     }
 
-    //    tab选中
+    /**
+     * tab选中
+     * @param tab
+     */
     private void updateTab(TabLayout.Tab tab){
         String title ="";
         title=tab.getText().toString();
@@ -130,7 +175,11 @@ public class First_Resource extends AppCompatActivity {
             tab.setIcon(R.mipmap.ic_resource_video_selected);
         }
     }
-    //  tab未选中
+
+    /**
+     * tab未选中
+     * @param tab
+     */
     private  void updateTabNormal(TabLayout.Tab tab){
         String title ="";
         title=tab.getText().toString();

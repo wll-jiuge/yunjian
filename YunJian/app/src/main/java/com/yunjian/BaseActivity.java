@@ -10,22 +10,44 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * The type Base activity.
+ *
+ * @author 吴立柳
+ * @package com.yunjian
+ * @date on 2020/9/6
+ * @describe 公共基本类, 定义共有数据和方法
+ */
 public class BaseActivity  extends AppCompatActivity {
-   public Context mContext;
+    /**
+     * The M context.
+     */
+    public Context mContext;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
     }
 
-//导航
-//    public void navigateTo(Class c1,Class c2){
-//        Intent intent = new Intent(,c2);
-//        startActivity(intent);
-//    }
+    /**
+     *页面跳转
+     * @param c1s
+     */
 
-//    存储shared ...不知道为什么没成功
-    protected void saveStringtoSp(String key,String value){
+    public void navigateTo(Class c1s){
+        Intent intent = new Intent(mContext,c1s);
+        startActivity(intent);
+    }
+
+    /**
+     * Save stringto sp.
+     * 存储token
+     *
+     * @param key   the key
+     * @param value the value
+     */
+
+    public void saveStringtoSp(String key,String value){
         SharedPreferences sp = getSharedPreferences("sp_token",MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key,value);

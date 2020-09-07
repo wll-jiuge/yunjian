@@ -1,8 +1,5 @@
 package fragments;
-/*
-* 我的界面
-*
-* */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,10 +16,10 @@ import androidx.fragment.app.Fragment;
 import com.xuexiang.xui.widget.banner.widget.banner.BannerItem;
 import com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner;
 import com.xuexiang.xui.widget.banner.widget.banner.base.BaseBanner;
-import com.yunjian.First_LogInfomation;
-import com.yunjian.First_Notification;
-import com.yunjian.First_Resource;
-import com.yunjian.First_Xunjian;
+import com.yunjian.First_LogInfomationActivity;
+import com.yunjian.First_NotificationActivity;
+import com.yunjian.First_ResourceActivity;
+import com.yunjian.First_XunjianActivity;
 import com.yunjian.R;
 
 import java.util.ArrayList;
@@ -32,21 +29,49 @@ import java.util.Map;
 
 import data.DataProvider;
 
-public class Bottom_navigation_firstfragment extends Fragment {
+/**
+ *@package fragments
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 首页fragment
+*/
+public class BottomNavigationFirstfragment extends BaseFragment {
+    /**
+     * 轮播图组件
+     */
     SimpleImageBanner simpleImageBanner;
+    /**
+     * The Grid view.
+     */
     GridView gridView;
-    private List<BannerItem> mData;  //轮播图列表
+    /**
+     * 轮播图列表
+     */
+    private List<BannerItem> mData;
+    /**
+     * The Adapter.
+     */
     SimpleAdapter adapter;
+    /**
+     * The Intent.
+     */
     Intent intent;
+    /**
+     * The Titles.
+     */
     String[] titles = new String[]{"日常巡检", "日志", "资源库", "整改通知"};
+    /**
+     * The Images.
+     */
     int[] images = new int[]{R.mipmap.first03,R.mipmap.first04, R.mipmap.first05,R.mipmap.first06};
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bottom_navigation_first,container,false);
-//        轮播图
+        //轮播图实现
         simpleImageBanner = v.findViewById(R.id.banner);
-        mData = DataProvider.getBannerList();  //配置数据
+        //配置数据
+        mData = DataProvider.getBannerList();
         simpleImageBanner.setSource(mData)
         .setOnItemClickListener(new BaseBanner.OnItemClickListener<BannerItem>() {
                     @Override
@@ -73,27 +98,35 @@ public class Bottom_navigation_firstfragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
-                    case 0:{//巡检
-                        intent = new Intent(getActivity(), First_Xunjian.class);
-                        startActivity(intent);
+                    //巡检
+                    case 0:{
+//                        intent = new Intent(getActivity(), First_XunjianActivity.class);
+//                        startActivity(intent);
+                        navigateTo(First_XunjianActivity.class);
                         intent=null;
                         break;
                     }
-                    case 1:{//日志信息
-                        intent = new Intent(getActivity(), First_LogInfomation.class);
-                        startActivity(intent);
+                    //日志信息
+                    case 1:{
+//                        intent = new Intent(getActivity(), First_LogInfomationActivity.class);
+//                        startActivity(intent);
+                        navigateTo(First_LogInfomationActivity.class);
                         intent=null;
                         break;
                     }
-                    case 2:{//资源库
-                        intent = new Intent(getActivity(), First_Resource.class);
-                        startActivity(intent);
+                    //资源库
+                    case 2:{
+//                        intent = new Intent(getActivity(), First_ResourceActivity.class);
+//                        startActivity(intent);
+                        navigateTo(First_ResourceActivity.class);
                         intent=null;
                         break;
                     }
-                    case 3://整改通知
-                        intent = new Intent(getActivity(), First_Notification.class);
-                        startActivity(intent);
+                    //整改通知
+                    case 3:
+//                        intent = new Intent(getActivity(), First_NotificationActivity.class);
+//                        startActivity(intent);
+                        navigateTo(First_NotificationActivity.class);
                         intent=null;
                         break;
                 }

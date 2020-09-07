@@ -21,13 +21,37 @@ import java.util.List;
 
 import fragments.NotificationFragment;
 
-public class First_Notification extends AppCompatActivity {
-Toolbar toolbar;
-EditText editText;
-Button button;
-ViewPager viewPager;
-TextView textView;
-Fragment fragment;
+/**
+ *@package com.yunjian
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe  首页--通知页面
+*/
+public class First_NotificationActivity extends BaseActivity {
+    /**
+     * The Toolbar.
+     */
+    Toolbar toolbar;
+    /**
+     * The Edit text.
+     */
+    EditText editText;
+    /**
+     * The Button.
+     */
+    Button button;
+    /**
+     * The View pager.
+     */
+    ViewPager viewPager;
+    /**
+     * The Text view.
+     */
+    TextView textView;
+    /**
+     * The Fragment.
+     */
+    Fragment fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +68,9 @@ Fragment fragment;
         viewPager.setAdapter(new ViewAdapter(getSupportFragmentManager(),fragment));
     }
 
+    /**
+     * 初始化
+     */
     private void init(){
         toolbar=findViewById(R.id.toolbar_notification);
         editText=findViewById(R.id.edt_notification);
@@ -54,10 +81,18 @@ Fragment fragment;
         fragment=new NotificationFragment();
     }
 
-    //适配器类
+    /**
+     * 适配器类
+     */
     private class ViewAdapter extends FragmentPagerAdapter{
         private Fragment fragment;
 
+        /**
+         * Instantiates a new View adapter.
+         *
+         * @param fm       the fm
+         * @param fragment the fragment
+         */
         public ViewAdapter(@NonNull FragmentManager fm, Fragment fragment) {
             super(fm);
             this.fragment=fragment;

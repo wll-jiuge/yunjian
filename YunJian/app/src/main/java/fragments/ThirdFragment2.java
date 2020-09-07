@@ -10,7 +10,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.yunjian.R;
-
+/**
+ *@package fragments
+ *@date on 2020/9/6
+ *@author 吴立柳
+ *@describe 诊所页面--已处理项目
+*/
 public class ThirdFragment2 extends Fragment {
     @Nullable
     @Override
