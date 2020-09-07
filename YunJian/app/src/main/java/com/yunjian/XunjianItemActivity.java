@@ -23,11 +23,7 @@ import utils.XToastUtils;
  * @date on 2020/9/6
  * @describe 巡检页面 --列表展示
  */
-<<<<<<< HEAD
 public class XunjianItemActivity extends BaseActivity {
-=======
-public class XunjianItemActivity extends AppCompatActivity {
->>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     /**
      * The Xunjianitem name.
      */

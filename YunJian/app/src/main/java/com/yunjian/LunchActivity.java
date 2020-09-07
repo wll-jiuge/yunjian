@@ -13,11 +13,7 @@ import static java.lang.Thread.sleep;
  *@author 吴立柳
  *@describe 启动界面
 */
-<<<<<<< HEAD
 public class LunchActivity extends BaseActivity {
-=======
-public class LunchActivity extends AppCompatActivity {
->>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

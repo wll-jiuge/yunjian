@@ -33,11 +33,7 @@ import java.util.Map;
  * @date on 2020/9/6
  * @describe 我的fragment
  */
-<<<<<<< HEAD
 public class BottomNavigationLastfragment extends BaseFragment {
-=======
-public class BottomNavigationLastfragment extends Fragment {
->>>>>>> 64bad1da5154bbd5a4485ac98446534ed230edbb
     private Personentity personentity;
     /**
      * The List view.
