@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddXunjianActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_bgcolor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:text="@string/addxunjian_title"></TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/addxunjian_bgshape"
+        android:layout_margin="@dimen/dimen_5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dimen_15dp"
+                android:layout_height="@dimen/dimen_15dp"
+                android:background="@color/xunjian_icon_color"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:orientation="horizontal"></LinearLayout>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="@dimen/dimen_138dp"
+                android:layout_height="wrap_content"
+                android:text="@string/addxunjian_name" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/addxunjian_edtxt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/addxunjian_bgshape"
+        android:layout_margin="@dimen/dimen_5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dimen_15dp"
+                android:layout_height="@dimen/dimen_15dp"
+                android:background="@color/xunjian_icon_color"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:orientation="horizontal"></LinearLayout>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="@dimen/dimen_138dp"
+                android:layout_height="wrap_content"
+                android:text="@string/addxunjian_type" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/addxunjian_edtxt_type"
+                android:layout_width="@dimen/dimen_138dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:inputType="textPersonName" />
+
+            <Spinner
+                android:id="@+id/spinner_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/addxunjian_type"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/addxunjian_bgshape"
+        android:layout_margin="@dimen/dimen_5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dimen_15dp"
+                android:layout_height="@dimen/dimen_15dp"
+                android:background="@color/xunjian_icon_color"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:orientation="horizontal"></LinearLayout>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="@dimen/dimen_138dp"
+                android:layout_height="wrap_content"
+                android:text="@string/addxunjian_item" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/addxunjian_edtxt_item"
+                android:layout_width="@dimen/dimen_138dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:inputType="textPersonName" />
+
+            <Spinner
+                android:id="@+id/spinner_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/addxunjian_item"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_5dp"
+        android:padding="@dimen/dimen_10dp"
+        android:background="@drawable/addxunjian_bgshape"
+        android:inputType="textMultiLine"
+        android:text="" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_bgcolor"
+        android:textColor="@color/color_white"
+        android:text="Button" />
+
+
+</LinearLayout>

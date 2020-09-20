@@ -2,40 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@drawable/img_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner
+    <com.yunjian.widget.RadiusImageBanner
         android:id="@+id/banner"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:bb_barColor="#88000000"
-        app:bb_barPaddingBottom="5dp"
-        app:bb_barPaddingLeft="10dp"
-        app:bb_barPaddingRight="10dp"
-        app:bb_barPaddingTop="5dp"
-        app:bb_delay="2"
-        app:bb_indicatorCornerRadius="3dp"
-        app:bb_indicatorGap="8dp"
-        app:bb_indicatorGravity="RIGHT"
-        app:bb_indicatorHeight="6dp"
-        app:bb_indicatorSelectColor="#ffffff"
-        app:bb_indicatorStyle="CORNER_RECTANGLE"
-        app:bb_indicatorUnselectColor="#88ffffff"
-        app:bb_indicatorWidth="6dp"
-        app:bb_isAutoScrollEnable="true"
-        app:bb_isBarShowWhenLast="true"
-        app:bb_isIndicatorShow="true"
-        app:bb_isLoopEnable="true"
-        app:bb_isTitleShow="true"
-        app:bb_period="10"
-        app:bb_scale="0.5625"
-        app:bb_textColor="#ffffff"
-        app:bb_textSize="13.5sp" />
+        app:bb_barPaddingBottom="10dp"
+        app:bb_scale="0.4317"></com.yunjian.widget.RadiusImageBanner>
+
+    <LinearLayout
+        android:id="@+id/today_things"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/today_shape"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_15dp"
+        android:layout_marginLeft="@dimen/dimen_11dp"
+        android:layout_marginBottom="@dimen/dimen_35dp"
+        android:layout_height="@dimen/dimen_200dp"/>
 
     <GridView
         android:id="@+id/gridView"
+        android:background="@drawable/first_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="4"/>
+        android:layout_marginLeft="@dimen/dimen_11dp"
+        android:layout_marginRight="@dimen/dimen_15dp"
+        android:layout_height="250dp"
+        android:numColumns="3"/>
 </LinearLayout>

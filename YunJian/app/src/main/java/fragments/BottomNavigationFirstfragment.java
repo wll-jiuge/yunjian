@@ -21,6 +21,7 @@ import com.yunjian.First_NotificationActivity;
 import com.yunjian.First_ResourceActivity;
 import com.yunjian.First_XunjianActivity;
 import com.yunjian.R;
+import com.yunjian.widget.RadiusImageBanner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,6 +41,7 @@ public class BottomNavigationFirstfragment extends BaseFragment {
      * 轮播图组件
      */
     SimpleImageBanner simpleImageBanner;
+    RadiusImageBanner banner;
     /**
      * The Grid view.
      */
@@ -63,23 +65,23 @@ public class BottomNavigationFirstfragment extends BaseFragment {
     /**
      * The Images.
      */
-    int[] images = new int[]{R.mipmap.first03,R.mipmap.first04, R.mipmap.first05,R.mipmap.first06};
+    int[] images = new int[]{R.mipmap.first01,R.mipmap.first02, R.mipmap.first03,R.mipmap.first04};
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bottom_navigation_first,container,false);
         //轮播图实现
-        simpleImageBanner = v.findViewById(R.id.banner);
+        banner = v.findViewById(R.id.banner);
         //配置数据
         mData = DataProvider.getBannerList();
-        simpleImageBanner.setSource(mData)
-        .setOnItemClickListener(new BaseBanner.OnItemClickListener<BannerItem>() {
-                    @Override
-                    public void onItemClick(View view, BannerItem item, int position) {
-                    }
-                })
-      .setIsOnePageLoop(false).startScroll();
-        simpleImageBanner.setSource(mData).startScroll();
+//        simpleImageBanner.setSource(mData)
+//        .setOnItemClickListener(new BaseBanner.OnItemClickListener<BannerItem>() {
+//                    @Override
+//                    public void onItemClick(View view, BannerItem item, int position) {
+//                    }
+//                })
+//      .setIsOnePageLoop(false).startScroll();
+        banner.setSource(mData).startScroll();
 
         //gridview菜单
         gridView = v.findViewById(R.id.gridView);

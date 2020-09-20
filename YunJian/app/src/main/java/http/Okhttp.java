@@ -24,7 +24,7 @@ import okhttp3.Response;
 */
 public class Okhttp{
 //    请求url,根据项目修改
-    private String url = "https://www.baidu.com/home/other/data/weatherInfo?city=%E6%B5%B7%E5%8F%A3&indextype=manht&_req_seqid=0xacf3d06f0000d71f&asyn=1&t=1598359444031&sid=32658_1467_32141_31660_32045_32117_31708_26350_32505";
+    private String url = "http://101.201.56.140:10086/sso/authcode";
 
 //    get请求
     private void get(){

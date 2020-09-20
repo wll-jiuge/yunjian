@@ -26,9 +26,9 @@ import java.util.List;
  * @author 吴立柳
  * @package fragments
  * @date on 2020/9/6
- * @describe 任务页面 --超时任务
+ * @describe 巡检 --超时任务
  */
-public class SecondFragment3 extends BaseFragment {
+public class XunjianFragment3 extends BaseFragment {
     private String res = "{\"msg\":\"ok\",\"listCounts\":5,\"code\":0,\"list\":[{\"name\":\"aaa\",\"method\":\"测试方法1\",\"standard\":\"测试标准一\",\"items\":\"aaa数据项内容\"},{\"name\":\"bbb\",\"method\":\"测试方法2\",\"standard\":\"测试标准二\",\"items\":\"bbb数据项内容\"},{\"name\":\"ccc\",\"method\":\"测试方法3\",\"standard\":\"测试标准三\",\"items\":\"ccc数据项内容\"},{\"name\":\"ddd\",\"method\":\"测试方法4\",\"standard\":\"测试标准四\",\"items\":\"ddd数据项内容\"},{\"name\":\"eee\",\"method\":\"测试方法5\",\"standard\":\"测试标准五\",\"items\":\"eee数据项内容\"}]}";
     @Nullable
     @Override

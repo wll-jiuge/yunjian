@@ -3,19 +3,33 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <SearchView
-        android:id="@+id/searchview_loginfomation"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:queryHint="搜索(工程名/天气/时间/进度)">
-    </SearchView>
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="页面1" />
+        <SearchView
+            android:id="@+id/searchview_loginfomation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            android:queryHint="搜索(工程名/天气/时间/进度)"></SearchView>
+
+        <com.xuexiang.xui.widget.button.roundbutton.RoundButton
+            android:id="@+id/loginfo_submit"
+            style="@style/RoundButton.Blue"
+            android:layout_width="@dimen/dimen_60dp"
+            android:layout_height="@dimen/dimen_35dp"
+            android:textColor="@color/text_color"
+            android:text="@string/tap_submit"
+            android:layout_marginRight="@dimen/dimen_10dp"></com.xuexiang.xui.widget.button.roundbutton.RoundButton>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_loginfon_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

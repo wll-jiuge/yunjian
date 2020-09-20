@@ -14,7 +14,6 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.yunjian.R;
 
-import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,9 +58,9 @@ public class BottomNavigationSecondfragment extends BaseFragment {
      */
     private void initFragments(){
         fragments = new ArrayList<>();
-        fragments.add(new SecondFragment1());
-        fragments.add(new SecondFragment2());
-        fragments.add(new SecondFragment3());
+        fragments.add(new XunjianFragment1());
+        fragments.add(new XunjianFragment2());
+        fragments.add(new XunjianFragment3());
     }
 
     /**

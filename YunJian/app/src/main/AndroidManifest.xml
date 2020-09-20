@@ -3,7 +3,9 @@
     package="com.yunjian">
     <!-- 网络访问权限 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 摄像头调用权限 -->
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 读取内存权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApp"
@@ -13,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MineListActivity"></activity>
+        <activity android:name=".AddXunjianActivity"></activity>
+        <activity android:name=".MineListActivity" />
         <activity android:name=".XunjianItemActivity" />
         <activity android:name=".First_NotificationActivity" />
         <activity android:name=".First_ResourceActivity" />
@@ -30,6 +33,16 @@
         </activity>
         <activity android:name=".Mine_Activity" />
         <activity android:name=".MainActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.yunjian.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

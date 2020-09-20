@@ -2,7 +2,6 @@ package com.yunjian;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -10,22 +9,18 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.google.android.material.tabs.TabLayout;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import fragments.SecondFragment1;
-import fragments.SecondFragment2;
-import fragments.SecondFragment3;
+import fragments.XunjianFragment1;
+import fragments.XunjianFragment2;
+import fragments.XunjianFragment3;
 
 /**
  * The type First xunjian activity.
@@ -60,6 +55,7 @@ public class First_XunjianActivity extends BaseActivity {
      * The Fragments.
      */
     List<Fragment> fragments;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +65,7 @@ public class First_XunjianActivity extends BaseActivity {
         toolbar = findViewById(R.id.toolbar_xunjian);
         viewPager = findViewById(R.id.viewpager_xunjian);
         textView=findViewById(R.id.txt_toolbar_xunjian);
+
         textView.setText("日常巡检");
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_navigation_back_white);
@@ -81,14 +78,13 @@ public class First_XunjianActivity extends BaseActivity {
                 finish();
             }
         });
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(First_XunjianActivity.this,"新建任务",Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
-
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                Toast.makeText(First_XunjianActivity.this,"新建任务",Toast.LENGTH_SHORT).show();
+//                return true;
+//            }
+//        });
     }
 
 
@@ -97,9 +93,9 @@ public class First_XunjianActivity extends BaseActivity {
      */
     private void initFragments(){
         fragments = new ArrayList<>();
-        fragments.add(new SecondFragment1());
-        fragments.add(new SecondFragment2());
-        fragments.add(new SecondFragment3());
+        fragments.add(new XunjianFragment1());
+        fragments.add(new XunjianFragment2());
+        fragments.add(new XunjianFragment3());
     }
 
     /**
@@ -143,35 +139,44 @@ public class First_XunjianActivity extends BaseActivity {
     }
 
     /**
+     * 浮动按钮点击事件
+     * 数据请求应该在点击页面的时候就发生
+     */
+    public void navigate(View view){
+        navigateTo(AddXunjianActivity.class);
+        }
+
+
+    /**
      * 重写菜单方法
      * @param menu
      * @return
      */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_xunjian,menu);
-        return true;
-    }
-
-    /**
-     * 使菜单显示图标
-     * @param featureId
-     * @param menu
-     * @return
-     */
-    @Override
-    public boolean onMenuOpened(int featureId, Menu menu) {
-        if (menu != null) {
-            if (menu.getClass().getSimpleName().equalsIgnoreCase("MenuBuilder")) {
-                try {
-                    Method method = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
-                    method.setAccessible(true);
-                    method.invoke(menu, true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return super.onMenuOpened(featureId, menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_xunjian,menu);
+//        return true;
+//    }
+//
+//    /**
+//     * 使菜单显示图标
+//     * @param featureId
+//     * @param menu
+//     * @return
+//     */
+//    @Override
+//    public boolean onMenuOpened(int featureId, Menu menu) {
+//        if (menu != null) {
+//            if (menu.getClass().getSimpleName().equalsIgnoreCase("MenuBuilder")) {
+//                try {
+//                    Method method = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", Boolean.TYPE);
+//                    method.setAccessible(true);
+//                    method.invoke(menu, true);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//        return super.onMenuOpened(featureId, menu);
+//    }
 }
