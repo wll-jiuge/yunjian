@@ -9,4 +9,9 @@
         <item>部门:</item>
         <item>工程:</item>
     </string-array>
+
+    <string-array name="choice">
+        <item>未填写:</item>
+        <item>已填写</item>
+    </string-array>
 </resources>

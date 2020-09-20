@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,50 +14,39 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.yunjian.R;
-import com.yunjian.adapters.TestAdapter;
-import com.yunjian.entity.XunjianItemEntity;
+import com.yunjian.adapters.TaskAdapter;
+import com.yunjian.entity.TaskItemEntity;
+import com.yunjian.entity.TaskItemResponse;
 import com.yunjian.entity.XunjianItemResponse;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 /**
- * The type Second fragment 3.
- *
- * @author 吴立柳
- * @package fragments
- * @date on 2020/9/6
- * @describe 巡检页面 --超时任务
+ *@package fragments
+ *@date on 2020/9/20
+ *@author 何楚玥
+ *@describe 任务页面--超时任务
  */
-public class SecondFragment3 extends BaseFragment {
+
+public class TaskFragment3 extends Fragment {
     private String res = "{\"msg\":\"ok\",\"listCounts\":5,\"code\":0,\"list\":[{\"name\":\"aaa\",\"method\":\"测试方法1\",\"standard\":\"测试标准一\",\"items\":\"aaa数据项内容\"},{\"name\":\"bbb\",\"method\":\"测试方法2\",\"standard\":\"测试标准二\",\"items\":\"bbb数据项内容\"},{\"name\":\"ccc\",\"method\":\"测试方法3\",\"standard\":\"测试标准三\",\"items\":\"ccc数据项内容\"},{\"name\":\"ddd\",\"method\":\"测试方法4\",\"standard\":\"测试标准四\",\"items\":\"ddd数据项内容\"},{\"name\":\"eee\",\"method\":\"测试方法5\",\"standard\":\"测试标准五\",\"items\":\"eee数据项内容\"}]}";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.second_layout3,container,false);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerview_second);
+        View view = inflater.inflate(R.layout.task_layout3,container,false);
+        RecyclerView recyclerView=view.findViewById(R.id.recyclerview_try);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        XunjianItemResponse xunjianItemResponse = new Gson().fromJson(res,XunjianItemResponse.class);
+        TaskItemResponse taskItemResponse = new Gson().fromJson(res,TaskItemResponse.class);
         //请求成功
-        if(xunjianItemResponse!=null&&xunjianItemResponse.getCode() == 0){
-            List<XunjianItemEntity> data = xunjianItemResponse.getList();
+        if(taskItemResponse!=null&&taskItemResponse.getCode() == 0){
+            List<TaskItemEntity> data = taskItemResponse.getList();
             //传入数据
-            TestAdapter testAdapter = new TestAdapter(getActivity(),data);
-            recyclerView.setAdapter(testAdapter);
+            TaskAdapter taskAdapter = new TaskAdapter(getActivity(),data);
+            recyclerView.setAdapter(taskAdapter);
         }
-//        List<XunjianItemResponse> data = new ArrayList<>();
-//        for(int i=0;i<8;i++){
-//            XunjianItemResponse xunjianItemResponse = new XunjianItemResponse();
-//            xunjianItemResponse.setTestname("测试标题");
-//            xunjianItemResponse.setTestfangfa("测试方法");
-//            xunjianItemResponse.setTeststandard("测试标准");
-//            xunjianItemResponse.setTestxiang("测试项");
-//            data.add(xunjianItemResponse);
-//        }
-//        TestAdapter testAdapter = new TestAdapter(getActivity(),data);
-//        recyclerView.setAdapter(testAdapter);
         return view;
     }
 }

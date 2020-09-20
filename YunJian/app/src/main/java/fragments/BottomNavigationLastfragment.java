@@ -70,12 +70,12 @@ public class BottomNavigationLastfragment extends BaseFragment {
     /**
      * The Mine list.
      */
-    String[] Mine_list = new String[]{"我的账户", "我的部门", "我的班组", "服务器配置", "上传日志", "关于", "退出系统"};
+    String[] Mine_list = new String[]{"我的账户", "我的部门", "我的班组", "上传日志", "关于", "退出系统"};
     /**
      * The Images.
      */
     int[] images = new int[]{R.drawable.mine_1, R.drawable.mine_2, R.drawable.mine_3,
-            R.drawable.mine_4, R.drawable.mine_5, R.drawable.mine_6, R.drawable.mine_7};
+            R.drawable.mine_5, R.drawable.mine_6, R.drawable.mine_7};
 
     /**
      * Get instance bottom navigation lastfragment.
@@ -132,9 +132,6 @@ public class BottomNavigationLastfragment extends BaseFragment {
                         break;
                     }
                     case 5:{
-                        break;
-                    }
-                    case 6:{
                         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                         builder.setTitle("退出");
                         builder.setMessage("您确定退出程序吗?");

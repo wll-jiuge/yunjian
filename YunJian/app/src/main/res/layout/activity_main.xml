@@ -79,13 +79,12 @@
             android:layout_marginRight="@dimen/dimen_25dp"
             app:rb_isRadiusAdjustBounds="true">
         </com.xuexiang.xui.widget.button.roundbutton.RoundButton>
-
         <com.xuexiang.xui.widget.button.roundbutton.RoundButton
             android:id="@+id/btn_change"
             android:layout_width="match_parent"
             style="@style/RoundButton.Blue"
             android:textColor="@color/text_color"
-            android:text="@string/tap_serverset"
+            android:text="@string/tap_forget"
             android:layout_marginTop="@dimen/dimen_10dp"
             android:layout_marginLeft="@dimen/dimen_25dp"
             android:layout_marginRight="@dimen/dimen_25dp"

@@ -60,8 +60,8 @@ public class BottomNavigationThirdfragment extends BaseFragment {
     private void initFragments(){
         fragments = new ArrayList<>();
         fragments.add(new ThirdFragment1());
-        fragments.add(new ThirdFragment1());
-        fragments.add(new ThirdFragment1());
+        fragments.add(new ThirdFragment2());
+        fragments.add(new ThirdFragment3());
     }
 
     /**

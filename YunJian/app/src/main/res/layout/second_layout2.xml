@@ -9,5 +9,5 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="页面2" />
+        android:text="巡检2" />
 </LinearLayout>

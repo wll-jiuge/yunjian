@@ -14,7 +14,7 @@ import com.yunjian.R;
  *@package fragments
  *@date on 2020/9/6
  *@author 吴立柳
- *@describe 任务页面--已完成页面
+ *@describe 巡检页面--已完成页面
 */
 public class SecondFragment2 extends Fragment {
     @Nullable

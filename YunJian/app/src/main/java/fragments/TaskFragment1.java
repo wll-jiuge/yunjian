@@ -10,17 +10,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.yunjian.R;
+
 /**
  *@package fragments
- *@date on 2020/9/6
- *@author 吴立柳
- *@describe 巡检页面--当前任务
-*/
-public class SecondFragment1 extends Fragment {
+ *@date on 2020/9/11
+ *@author 何楚玥
+ *@describe 任务页面--当前任务
+ */
+
+public class TaskFragment1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.second_layout1,container,false);
+        View view = inflater.inflate(R.layout.task_layout1,container,false);
         return view;
     }
 }

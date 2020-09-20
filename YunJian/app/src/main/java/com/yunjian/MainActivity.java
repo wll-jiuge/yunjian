@@ -83,15 +83,21 @@ public class MainActivity extends BaseActivity {
     private void login(){
         base=new BaseActivity();
 
-        if(StringUtils.isEmpty(ed_pwd.getText().toString()) || StringUtils.isEmpty(ed_username.getText().toString()) ){
-            XToastUtils.toast("请输入账号或密码");
+        if(StringUtils.isEmpty(ed_pwd.getText().toString())){
+            XToastUtils.toast("请输入密码");
         }
+        else if(StringUtils.isEmpty(ed_username.getText().toString())){
+            XToastUtils.toast("请输入帐号");
+        }
+        //方便测试暂时不限制帐号长度（手机号 11位）
+        /*else if(ed_username.getText().length()!=11){
+            XToastUtils.toast("帐号长度错误");
+        }*/
         //表示请求成功
         else if(loginResponse.getCode() == 0){
 //                   将token保存到SharedPreferences文件中
 //            base.saveStringtoSp("token",token);
            navigateTo(Mine_Activity.class);
-
         }else
         {
             XToastUtils.toast("登录失败");

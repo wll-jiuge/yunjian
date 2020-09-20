@@ -59,9 +59,9 @@ public class BottomNavigationSecondfragment extends BaseFragment {
      */
     private void initFragments(){
         fragments = new ArrayList<>();
-        fragments.add(new SecondFragment1());
-        fragments.add(new SecondFragment2());
-        fragments.add(new SecondFragment3());
+        fragments.add(new TaskFragment1());
+        fragments.add(new TaskFragment2());
+        fragments.add(new TaskFragment3());
     }
 
     /**

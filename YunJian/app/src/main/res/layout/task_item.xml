@@ -6,21 +6,19 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/xunjian_item_toolbar"
+        android:id="@+id/task_item_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/toolbar_bgcolor"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme">
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/barTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/text_color"
-            android:text="@string/title_xunjian_item" />
+            android:text="@string/title_task_item" />
     </androidx.appcompat.widget.Toolbar>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,13 +50,13 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txt_xunjianitem_name"
+            android:id="@+id/txt_taskitem_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_25dp"
             android:layout_marginRight="@dimen/dimen_25dp"
             android:layout_marginBottom="@dimen/dimen_25dp"
-            android:text="任务" />
+            android:text="名称" />
     </LinearLayout>
 
     <LinearLayout
@@ -91,13 +89,13 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txt_xunjianitem_fangfa"
+            android:id="@+id/txt_taskitem_method"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_25dp"
             android:layout_marginRight="@dimen/dimen_25dp"
             android:layout_marginTop="@dimen/dimen_5dp"
-            android:text="任务" />
+            android:text="方法" />
     </LinearLayout>
 
     <LinearLayout
@@ -130,13 +128,13 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txt_xunjianitem_standard"
+            android:id="@+id/txt_taskitem_standard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_25dp"
             android:layout_marginRight="@dimen/dimen_25dp"
             android:layout_marginTop="@dimen/dimen_5dp"
-            android:text="任务" />
+            android:text="标准" />
     </LinearLayout>
 
     <LinearLayout
@@ -152,7 +150,7 @@
             android:layout_marginTop="@dimen/dimen_5dp"
             android:layout_marginLeft="@dimen/dimen_25dp"
             android:layout_marginRight="@dimen/dimen_25dp"
-            android:layout_marginBottom="@dimen/dimen_25dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -165,15 +163,41 @@
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/test_jiancexiang" />
+                android:text="@string/test_result" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="@dimen/dimen_25dp"
+                    android:layout_height="@dimen/dimen_25dp"
+                    app:srcCompat="@mipmap/ic_xunjian_item" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1、保护层厚度："></TextView>
+            </LinearLayout>
+            <EditText
+                android:id="@+id/editTextNumber01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></EditText>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_25dp"
             android:layout_marginRight="@dimen/dimen_25dp"
             android:layout_marginBottom="@dimen/dimen_25dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/test_backgroudshape"
             android:orientation="vertical">
 
@@ -185,11 +209,12 @@
                 app:srcCompat="@mipmap/ic_xunjian_camera" />
 
             <TextView
-                android:id="@+id/txt_xunjianitem_xiang"
+                android:id="@+id/txt_taskitem_project"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_5dp"
-                android:text="任务" />
+                android:text="项目" />
+
         </LinearLayout>
 
     </LinearLayout>
