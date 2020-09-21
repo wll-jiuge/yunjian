@@ -1,11 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dimen_10dp"
+    android:background="@drawable/test_backgroudshape"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView4"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="页面2" />
+        android:background="@drawable/test_backgroudshape"
+        android:layout_marginBottom="@dimen/dimen_25dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_addlog_projectname"
+                android:layout_width="@dimen/dimen_110dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/addlog_labelshape"
+                android:gravity="center"
+                android:text="@string/addlog_projectname"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/edtxt_addlog_projectname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_addlog_time"
+                android:layout_width="@dimen/dimen_110dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/addlog_labelshape"
+                android:gravity="center"
+                android:text="@string/addlog_time"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/edtxt_addlog_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_addlog_weather"
+                android:layout_width="@dimen/dimen_110dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/addlog_labelshape"
+                android:gravity="center"
+                android:text="@string/addlog_weather"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/edtxt_addlog_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_addlog_progress"
+                android:layout_width="@dimen/dimen_110dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/addlog_labelshape"
+                android:gravity="center"
+                android:text="@string/addlog_progress"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/edtxt_addlog_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_addlog_person"
+                android:layout_width="@dimen/dimen_110dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/addlog_labelshape"
+                android:gravity="center"
+                android:text="@string/addlog_person"
+                android:textColor="@color/text_color" />
+
+            <EditText
+                android:id="@+id/edtxt_addlog_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:background="@drawable/test_backgroudshape"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_addlog_content"
+                android:layout_width="@dimen/dimen_110dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/addlog_labelshape"
+                android:gravity="center"
+                android:text="@string/addlog_content"
+                android:textColor="@color/text_color" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_100dp"
+                android:layout_weight="5"></LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:background="@drawable/test_backgroudshape"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_addlog_qualitycontent"
+                android:layout_width="@dimen/dimen_110dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/addlog_labelshape"
+                android:gravity="center"
+                android:text="@string/addlog_qualitycontent"
+                android:textColor="@color/text_color" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_100dp"
+                android:layout_weight="5"></LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.xuexiang.xui.widget.button.roundbutton.RoundButton
+        style="@style/RoundButton.Blue"
+        android:layout_width="@dimen/dimen_100dp"
+        android:layout_height="@dimen/dimen_35dp"
+        android:text="@string/tap_submit"></com.xuexiang.xui.widget.button.roundbutton.RoundButton>
+
 </LinearLayout>

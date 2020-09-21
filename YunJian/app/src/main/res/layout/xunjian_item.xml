@@ -178,7 +178,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/xunjian_camera"
                 android:layout_width="@dimen/dimem_50dp"
                 android:layout_height="@dimen/dimem_50dp"
                 android:layout_gravity="right"
@@ -190,6 +190,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_5dp"
                 android:text="任务" />
+
+            <ImageView
+                android:id="@+id/xunjian_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+
         </LinearLayout>
 
     </LinearLayout>
@@ -203,6 +211,7 @@
         android:orientation="horizontal">
 
         <RadioGroup
+            android:id="@+id/xunjian_radioGroup"
             android:layout_width="wrap_content"
             android:orientation="horizontal"
             android:layout_height="match_parent">

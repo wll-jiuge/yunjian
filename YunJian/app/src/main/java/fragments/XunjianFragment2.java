@@ -16,7 +16,7 @@ import com.yunjian.R;
  *@author 吴立柳
  *@describe 巡检页面--已完成页面
 */
-public class SecondFragment2 extends Fragment {
+public class XunjianFragment2 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

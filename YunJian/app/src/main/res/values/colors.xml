@@ -3,7 +3,14 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="toolbar_bgcolor">#079bef</color>
-    <color name="text_color">#ffffff</color>
+    <color name="toolbar_bgcolor">#0984E3</color>
+    <color name="text_color">#ECF0F1</color>
+    <color name="color_white">#ffffff</color>
     <color name="edtext_normal">#ccc</color>
+<!--    首页今日待做和菜单框颜色-->
+    <color name="first_border">#f1f2f6</color>
+<!--    巡检图标颜色-->
+    <color name="xunjian_icon_color">#48E74E</color>
+<!--    日志良好背景颜色-->
+    <color name="loginfo_list_min_situation">#47C84D</color>
 </resources>

@@ -3,6 +3,8 @@
     <dimen name="navigation_icon_size">14dp</dimen>
     <dimen name="dimen_138dp">138dp</dimen>
     <dimen name="dimen_60dp">60dp</dimen>
+    <dimen name="dimen_45dp">45dp</dimen>
+
     <!--    登录页-->
     <dimen name="dimen_25dp">25dp</dimen>
     <dimen name="dimem_50dp">50dp</dimen>
@@ -14,4 +16,11 @@
     <dimen name="dimen_110dp">110dp</dimen>
 <!--    个人信息页-->
     <dimen name="dimen_15dp">15dp</dimen>
+<!--    日志页-->
+    <dimen name="dimen_35dp">35dp</dimen>
+<!--    首页-->
+    <dimen name="dimen_11dp">11dp</dimen>
+    <dimen name="dimen_200dp">200dp</dimen>
+<!--    日志列表-->
+    <dimen name="dimen_300dp">300dp</dimen>
 </resources>

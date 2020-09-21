@@ -1,9 +1,13 @@
 package data;
 
+import com.xuexiang.xui.adapter.simple.AdapterItem;
+import com.xuexiang.xui.adapter.simple.ExpandableItem;
 import com.xuexiang.xui.widget.banner.widget.banner.BannerItem;
 import com.yunjian.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -52,4 +56,33 @@ public class DataProvider {
 
         return list;
     }
+
+    /**
+     * 引用XUI
+     * 弹窗内容
+     */
+    public static String[] dpiItems = new String[]{
+            "系统相册",
+            "相机"
+    };
+    /**
+     * 弹窗内容
+     * 引用XUI
+     */
+    public static AdapterItem[] menuItems = new AdapterItem[]{
+            new AdapterItem("登陆", R.drawable.icon_password_login),
+            new AdapterItem("筛选", R.drawable.icon_filter),
+            new AdapterItem("设置", R.drawable.icon_setting),
+    };
+    /**
+     * 弹窗内容
+     * 引用XUI
+     */
+    public static ExpandableItem[] expandableItems = new ExpandableItem[]{
+            ExpandableItem.of(new AdapterItem("屏幕尺寸", R.drawable.icon_password_login)).addChild(AdapterItem.arrayof(dpiItems)),
+            ExpandableItem.of(new AdapterItem("设备亮度", R.drawable.icon_filter)).addChild(menuItems),
+            ExpandableItem.of(new AdapterItem("屏幕分辨率", R.drawable.icon_setting)).addChild(AdapterItem.arrayof(dpiItems))
+    };
+
+
 }

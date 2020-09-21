@@ -14,7 +14,6 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.yunjian.R;
 
-import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.List;
 
