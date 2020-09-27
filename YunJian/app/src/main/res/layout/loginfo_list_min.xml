@@ -56,7 +56,7 @@
             android:id="@+id/imageView11"
             android:layout_width="@dimen/dimen_15dp"
             android:layout_height="@dimen/dimen_15dp"
-            app:srcCompat="@drawable/mine_6" />
+            app:srcCompat="@drawable/mine_4" />
 
         <TextView
             android:id="@+id/loginfo_list_min_time"

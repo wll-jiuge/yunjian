@@ -7,13 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
 import com.yunjian.MainActivity;
@@ -56,6 +56,7 @@ public class BottomNavigationLastfragment extends BaseFragment {
     /**
      * The Res.
      */
+    Button btn_exit;
     String res = "{" +
             "  \"msg\": \"ok\"," +
             "  \"code\": 0," +
@@ -70,12 +71,12 @@ public class BottomNavigationLastfragment extends BaseFragment {
     /**
      * The Mine list.
      */
-    String[] Mine_list = new String[]{"我的账户", "我的部门", "我的班组", "上传日志", "关于", "退出系统"};
+    String[] Mine_list = new String[]{"个人信息", "我的部门", "我的班组", "关于软件", "上传日志"};
     /**
      * The Images.
      */
     int[] images = new int[]{R.drawable.mine_1, R.drawable.mine_2, R.drawable.mine_3,
-            R.drawable.mine_5, R.drawable.mine_6, R.drawable.mine_7};
+            R.drawable.mine_4, R.drawable.mine_5};
 
     /**
      * Get instance bottom navigation lastfragment.
@@ -131,29 +132,33 @@ public class BottomNavigationLastfragment extends BaseFragment {
                     case 4:{
                         break;
                     }
-                    case 5:{
-                        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                        builder.setTitle("退出");
-                        builder.setMessage("您确定退出程序吗?");
-                        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                getActivity().finish();
-                                Intent intent = new Intent(getActivity(), MainActivity.class);
-                                intent.putExtra("returnMsg","001");
-                                startActivity(intent);
-                            }
-                        });
-                        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-
-                            }
-                        });
-                        builder.show();
-                        break;
-                    }
                 }
+            }
+        });
+
+        btn_exit =view.findViewById(R.id.btn_exit);
+        btn_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setTitle("退出");
+                builder.setMessage("您确定退出程序吗?");
+                builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        getActivity().finish();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        intent.putExtra("returnMsg","001");
+                        startActivity(intent);
+                    }
+                });
+                builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                builder.show();
             }
         });
 

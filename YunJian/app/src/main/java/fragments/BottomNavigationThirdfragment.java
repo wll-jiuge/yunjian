@@ -1,8 +1,10 @@
 package fragments;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.GenericTransitionOptions;
 import com.google.android.material.tabs.TabLayout;
+import com.yunjian.AddCheckActivity;
 import com.yunjian.R;
 
 import java.util.ArrayList;
@@ -23,7 +26,7 @@ import java.util.List;
  * @author 吴立柳
  * @package fragments
  * @date on 2020/9/6
- * @describe 诊所fragment
+ * @describe 诊断fragment
  */
 public class BottomNavigationThirdfragment extends BaseFragment {
     /**
@@ -42,15 +45,32 @@ public class BottomNavigationThirdfragment extends BaseFragment {
      * The Fragments.
      */
     List<Fragment> fragments;
+
+    //Button btn_float;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.bottom_navigation_third,container,false);
         tabLayout = view.findViewById(R.id.third_tab);
         viewPager = view.findViewById(R.id.third_viewpager);
+        //btn_float=view.findViewById(R.id.check_floatingActionButton);
         initFragments();
         viewPager.setAdapter(new ViewAdapter(getChildFragmentManager(),fragments));
         tabLayout.setupWithViewPager(viewPager);
+
+
+
+        /**
+         * 浮动按钮点击事件
+         * 数据请求应该在点击页面的时候就发生
+         */
+/*        btn_float.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(),AddCheckActivity.class);
+                startActivity(intent);
+            }
+        });*/
         return view;
     }
 
@@ -103,4 +123,8 @@ public class BottomNavigationThirdfragment extends BaseFragment {
             return title[position];
         }
     }
+    /*public void add_check(View view){
+        Intent intent =new Intent(getActivity(),AddCheckActivity.class);
+        startActivity(intent);
+    }*/
 }

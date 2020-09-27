@@ -26,6 +26,12 @@ android {
     }
 }
 
+
+repositories {
+    mavenCentral()
+}
+
+
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -58,4 +64,7 @@ dependencies {
     //下拉刷新
     implementation 'com.github.xuexiangjys.SmartRefreshLayout:refresh-header:1.1.5'
     implementation 'com.github.xuexiangjys.SmartRefreshLayout:refresh-layout:1.1.5'
+
+    //圆形头像
+    implementation 'com.makeramen:roundedimageview:2.2.1'
 }

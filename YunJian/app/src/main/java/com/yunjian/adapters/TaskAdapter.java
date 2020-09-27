@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yunjian.R;
-import com.yunjian.XunjianItemActivity;
+import com.yunjian.TaskItemActivity;
 import com.yunjian.entity.TaskItemEntity;
 
 
@@ -20,7 +20,7 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context mContext;
     private List<TaskItemEntity> data;
-    private TaskItemEntity jsonentity;
+    private TaskItemEntity jsonentest;
     public TaskAdapter(Context context,List<TaskItemEntity> data){
         this.mContext=context;
         this.data=data;
@@ -45,10 +45,10 @@ public class TaskAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         vh.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                jsonentity = data.get(position);
-                Intent intent = new Intent(mContext, XunjianItemActivity.class);
+                jsonentest = data.get(position);
+                Intent intent = new Intent(mContext, TaskItemActivity.class);
 //                传递单个列表对象
-                intent.putExtra("listentity",jsonentity);
+                intent.putExtra("listentity",jsonentest);
                 intent.putExtra("position",position);
                 mContext.startActivity(intent);
             }

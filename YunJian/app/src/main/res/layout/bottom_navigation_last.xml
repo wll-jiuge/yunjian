@@ -8,13 +8,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#FFFFFF">
 
-            <ImageView
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_margin="@dimen/dimen_10dp"
                 android:id="@+id/userImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/logo" />
+                android:layout_width="@dimen/dimen_60dp"
+                android:layout_height="@dimen/dimen_60dp"
+                android:src="@drawable/logo"
+                app:riv_oval="true">
+            </com.makeramen.roundedimageview.RoundedImageView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -45,8 +49,24 @@
             </LinearLayout>
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/listView"
+    <ListView
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        <com.xuexiang.xui.widget.button.roundbutton.RoundButton
+            android:id="@+id/btn_exit"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            style="@style/RoundButton.Blue"
+            android:text="@string/mine_exit"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginLeft="@dimen/dimen_25dp"
+            android:layout_marginRight="@dimen/dimen_25dp"
+            app:rb_isRadiusAdjustBounds="true"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp">
+        </com.xuexiang.xui.widget.button.roundbutton.RoundButton>
+
 </LinearLayout>

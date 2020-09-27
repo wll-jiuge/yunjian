@@ -9,7 +9,7 @@ import com.yunjian.entity.TaskItemEntity;
 /**
  * @author 何楚玥
  * @package com.yunjian
- * @date on 2020/9/11
+ * @date on 2020/9/26
  * @describe 任务页面 --列表展示
  */
 public class TaskItemActivity extends BaseActivity {
@@ -23,7 +23,7 @@ public class TaskItemActivity extends BaseActivity {
      * The Taskitem standard.
      */
     taskitem_standard, /**
-     * The Taskitem xiang.
+     * The Taskitem project.
      */
     taskitem_project;
     /**

@@ -20,7 +20,12 @@
         <item>质量检查</item>
         <item>安全检查</item>
     </string-array>
-
+    <!--诊断页面-->
+    <string-array name="add_check_pro">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
     <string-array name="addxunjian_item">
         <item>检验项1</item>
         <item>检验项2</item>

@@ -16,8 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AddXunjianActivity"></activity>
+        <activity android:name=".AddCheckActivity"></activity>
         <activity android:name=".MineListActivity" />
         <activity android:name=".XunjianItemActivity" />
+        <activity android:name=".TaskItemActivity"/>
         <activity android:name=".First_NotificationActivity" />
         <activity android:name=".First_ResourceActivity" />
         <activity android:name=".First_LogInfomationActivity" />
