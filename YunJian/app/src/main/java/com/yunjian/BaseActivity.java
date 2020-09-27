@@ -51,8 +51,4 @@ public class BaseActivity  extends AppCompatActivity {
         editor.putString(key,value);
         editor.commit();
     }
-
-
-
-
 }

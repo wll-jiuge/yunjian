@@ -14,6 +14,7 @@
     <dimen name="dimen_1dp">1dp</dimen>
     <dimen name="dimen_5dp">5dp</dimen>
     <dimen name="dimen_110dp">110dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
 <!--    个人信息页-->
     <dimen name="dimen_15dp">15dp</dimen>
 <!--    日志页-->
@@ -21,6 +22,11 @@
 <!--    首页-->
     <dimen name="dimen_11dp">11dp</dimen>
     <dimen name="dimen_200dp">200dp</dimen>
+    <dimen name="dimen_270dp">270dp</dimen>
 <!--    日志列表-->
     <dimen name="dimen_300dp">300dp</dimen>
+<!--    今日待做-->
+    <dimen name="dimen_80dp">80dp</dimen>
+    <dimen name="dimen_40dp">40dp</dimen>
+
 </resources>

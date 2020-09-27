@@ -41,6 +41,7 @@
         app:itemIconTint="@color/bottomnavigation_selected"
         app:itemTextColor="@color/bottomnavigation_selected"
         android:background="@color/text_color"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/mine_main">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </LinearLayout>

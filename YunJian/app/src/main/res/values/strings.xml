@@ -5,6 +5,11 @@
     <string name="tap_ok">确定</string>
     <string name="tap_cancel">取消</string>
     <string name="tap_forget">忘记密码</string>
+<!--    首页底部导航栏-->
+    <string name="navigation_home">首页</string>
+    <string name="navigation_task">任务</string>
+    <string name="navigation_quantity">质量诊断</string>
+    <string name="navigation_mine">我的</string>
     <!--    巡检/任务列表-->
     <string name="test_name">任务名称</string>
     <string name="test_jiancefangfa">检测方法</string>
@@ -39,5 +44,9 @@
     <string name="addxunjian_type">任务类型</string>
     <string name="addxunjian_item">检验项</string>
     <string name="tab_create">创建</string>
-
+<!--首页__今日待做-->
+    <string name="today_things_title">今日待做</string>
+    <string name="today_things_date1">Sep</string>
+    <string name="today_things_date2">20</string>
+    <string name="today_things_week">周五</string>
 </resources>
