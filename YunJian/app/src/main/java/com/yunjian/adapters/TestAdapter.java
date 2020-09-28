@@ -16,6 +16,8 @@ import com.yunjian.XunjianItemActivity;
 import com.yunjian.entity.XunjianItemEntity;
 import com.yunjian.entity.XunjianItemResponse;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class TestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -43,6 +45,10 @@ public class TestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         vh.txt_testfangfa.setText(xunjianItemEntity.getMethod());
         vh.txt_teststanda.setText(xunjianItemEntity.getStandard());
         vh.txt_testxiang.setText(xunjianItemEntity.getItems());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日");
+        Date curdate = new Date(System.currentTimeMillis());
+        String str = formatter.format(curdate);
+        vh.txt_time.setText(str);
         vh.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,12 +72,14 @@ public class TestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private TextView txt_testfangfa;
         private TextView txt_teststanda;
         private TextView txt_testxiang;
+        private TextView txt_time;
         public ViewHoler(@NonNull View view) {
             super(view);
             txt_testname = view.findViewById(R.id.txt_test_tesname);
             txt_testfangfa = view.findViewById(R.id.txt_test_testfangfa);
             txt_teststanda = view.findViewById(R.id.txt_test_teststandard);
             txt_testxiang = view.findViewById(R.id.txt_test_testxiang);
+            txt_time = view.findViewById(R.id.txt_test_time);
         }
     }
 

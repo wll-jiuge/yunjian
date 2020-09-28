@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.GenericTransitionOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.yunjian.AddCheckActivity;
 import com.yunjian.R;
@@ -46,14 +47,14 @@ public class BottomNavigationThirdfragment extends BaseFragment {
      */
     List<Fragment> fragments;
 
-    //Button btn_float;
+    FloatingActionButton btn_float;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.bottom_navigation_third,container,false);
         tabLayout = view.findViewById(R.id.third_tab);
         viewPager = view.findViewById(R.id.third_viewpager);
-        //btn_float=view.findViewById(R.id.check_floatingActionButton);
+        btn_float=view.findViewById(R.id.check_floatingActionButton);
         initFragments();
         viewPager.setAdapter(new ViewAdapter(getChildFragmentManager(),fragments));
         tabLayout.setupWithViewPager(viewPager);
@@ -64,13 +65,9 @@ public class BottomNavigationThirdfragment extends BaseFragment {
          * 浮动按钮点击事件
          * 数据请求应该在点击页面的时候就发生
          */
-/*        btn_float.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =new Intent(getActivity(),AddCheckActivity.class);
-                startActivity(intent);
-            }
-        });*/
+        btn_float.setOnClickListener(e->{
+            navigateTo(AddCheckActivity.class);
+        } );
         return view;
     }
 

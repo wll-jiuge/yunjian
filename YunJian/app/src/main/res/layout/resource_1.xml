@@ -3,9 +3,31 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView9"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="占位" />
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <SearchView
+            android:layout_width="@dimen/dimen_200dp"
+            android:layout_height="@dimen/dimen_35dp"
+            android:iconifiedByDefault="false">
+        </SearchView>
+
+        <com.xuexiang.xui.widget.button.ButtonView style="@style/ButtonView.Blue"
+            android:text="新增"
+            android:layout_width="@dimen/dimem_50dp"
+            android:layout_marginRight="@dimen/dimen_15dp"/>
+        <com.xuexiang.xui.widget.button.ButtonView style="@style/ButtonView.Blue"
+            android:layout_width="@dimen/dimem_50dp"
+            android:text="提交" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/resource1_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

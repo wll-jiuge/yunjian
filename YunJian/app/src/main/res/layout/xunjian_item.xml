@@ -42,7 +42,7 @@
                 android:id="@+id/imageView6"
                 android:layout_width="@dimen/dimen_25dp"
                 android:layout_height="@dimen/dimen_25dp"
-                app:srcCompat="@mipmap/ic_xunjian_item" />
+                app:srcCompat="@mipmap/icon_rectangle_green" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -81,7 +81,7 @@
                 android:id="@+id/imageView7"
                 android:layout_width="@dimen/dimen_25dp"
                 android:layout_height="@dimen/dimen_25dp"
-                app:srcCompat="@mipmap/ic_xunjian_item" />
+                app:srcCompat="@mipmap/icon_rectangle_green" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -120,7 +120,7 @@
                 android:id="@+id/imageView8"
                 android:layout_width="@dimen/dimen_25dp"
                 android:layout_height="@dimen/dimen_25dp"
-                app:srcCompat="@mipmap/ic_xunjian_item" />
+                app:srcCompat="@mipmap/icon_rectangle_green" />
 
             <TextView
                 android:id="@+id/textView15"
@@ -159,7 +159,7 @@
                 android:id="@+id/imageView9"
                 android:layout_width="@dimen/dimen_25dp"
                 android:layout_height="@dimen/dimen_25dp"
-                app:srcCompat="@mipmap/ic_xunjian_item" />
+                app:srcCompat="@mipmap/icon_rectangle_green" />
 
             <TextView
                 android:id="@+id/textView16"

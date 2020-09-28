@@ -52,8 +52,4 @@ public class BaseActivity  extends AppCompatActivity {
         editor.putString(key,value);
         editor.commit();
     }
-
-    public void navigateTo(View view){
-        navigateTo(AddCheckActivity.class);
-    }
 }

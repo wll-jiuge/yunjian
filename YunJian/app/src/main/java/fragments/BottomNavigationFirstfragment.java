@@ -102,8 +102,6 @@ public class BottomNavigationFirstfragment extends BaseFragment {
                 switch (i){
                     //巡检
                     case 0:{
-//                        intent = new Intent(getActivity(), First_XunjianActivity.class);
-//                        startActivity(intent);
                         navigateTo(First_XunjianActivity.class);
                         intent=null;
                         break;

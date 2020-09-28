@@ -29,7 +29,7 @@ public class TaskAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(mContext).inflate(R.layout.task_item_min,parent,false);
+        View view= LayoutInflater.from(mContext).inflate(R.layout.task_item,parent,false);
         ViewHoler viewHoler=new ViewHoler(view);
         return viewHoler;
     }
