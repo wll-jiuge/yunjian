@@ -20,7 +20,7 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context mContext;
     private List<TaskItemEntity> data;
-    private TaskItemEntity jsonentest;
+    private TaskItemEntity jsonentity;
     public TaskAdapter(Context context,List<TaskItemEntity> data){
         this.mContext=context;
         this.data=data;
@@ -29,7 +29,7 @@ public class TaskAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(mContext).inflate(R.layout.task_item,parent,false);
+        View view= LayoutInflater.from(mContext).inflate(R.layout.task_item_min,parent,false);
         ViewHoler viewHoler=new ViewHoler(view);
         return viewHoler;
     }
@@ -45,10 +45,10 @@ public class TaskAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         vh.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                jsonentest = data.get(position);
+                jsonentity = data.get(position);
                 Intent intent = new Intent(mContext, TaskItemActivity.class);
 //                传递单个列表对象
-                intent.putExtra("listentity",jsonentest);
+                intent.putExtra("listentity",jsonentity);
                 intent.putExtra("position",position);
                 mContext.startActivity(intent);
             }

@@ -51,6 +51,15 @@ public class Api {
         return api;
     }
 
+    public static Api configs(String url){
+        client = new OkHttpClient.Builder().build();
+        requestUrl = ApiConfig.BASE_URL + url;
+        HashMap<String,Object> map=new HashMap();
+        map.put("","");
+        mParams = map;
+        return api;
+    }
+
     /**
      * post请求
      */
@@ -78,7 +87,7 @@ public class Api {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
 //                得到子线程
-                String result = response.body().toString();
+                String result = response.body().string();
                 Log.i("ttit",result);
                 callback.onSuccess(result);
             }
@@ -109,7 +118,7 @@ public class Api {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
 //                得到子线程
-                String result = response.body().toString();
+                String result = response.body().string();
                 Log.i("ttit",result);
                 callback.onSuccess(result);
             }

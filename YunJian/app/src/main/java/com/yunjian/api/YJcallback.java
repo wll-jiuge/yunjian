@@ -1,5 +1,10 @@
 package com.yunjian.api;
 
+import android.graphics.Bitmap;
+
+import okhttp3.Call;
+import okhttp3.Response;
+
 /**
  * @author 吴立柳
  * @package com.yunjian.api
