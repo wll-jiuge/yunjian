@@ -2,17 +2,21 @@ package fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.gson.Gson;
 import com.xuexiang.xui.widget.banner.widget.banner.BannerItem;
 import com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner;
 import com.xuexiang.xui.widget.banner.widget.banner.base.BaseBanner;
@@ -21,14 +25,26 @@ import com.yunjian.First_NotificationActivity;
 import com.yunjian.First_ResourceActivity;
 import com.yunjian.First_XunjianActivity;
 import com.yunjian.R;
+import com.yunjian.api.Api;
+import com.yunjian.api.ApiConfig;
+import com.yunjian.api.YJcallback;
+import com.yunjian.entity.BannerResourceEntity;
+import com.yunjian.entity.BannerResourceResponse;
 import com.yunjian.widget.RadiusImageBanner;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import data.DataProvider;
+
+import static com.xuexiang.xutil.XUtil.runOnUiThread;
 
 /**
  *@package fragments
@@ -65,15 +81,23 @@ public class BottomNavigationFirstfragment extends BaseFragment {
     /**
      * The Images.
      */
+
+    TextView today_things_month,today_things_day,today_things_week;
     int[] images = new int[]{R.mipmap.first01,R.mipmap.first02, R.mipmap.first03,R.mipmap.first04};
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bottom_navigation_first,container,false);
+        init(v);
+        updateDate();
         //轮播图实现
         banner = v.findViewById(R.id.banner);
+//        请求资源
+        getBannerResourse(v);
+        getResourceImage(v);
+        getCurrentXunjian(v);
         //配置数据
-        mData = DataProvider.getBannerList();
+//        mData = DataProvider.getBannerList();
 //        simpleImageBanner.setSource(mData)
 //        .setOnItemClickListener(new BaseBanner.OnItemClickListener<BannerItem>() {
 //                    @Override
@@ -81,7 +105,7 @@ public class BottomNavigationFirstfragment extends BaseFragment {
 //                    }
 //                })
 //      .setIsOnePageLoop(false).startScroll();
-        banner.setSource(mData).startScroll();
+//        banner.setSource(mData).startScroll();
 
         //gridview菜单
         gridView = v.findViewById(R.id.gridView);
@@ -136,4 +160,123 @@ public class BottomNavigationFirstfragment extends BaseFragment {
         return v;
     }
 
+    private void init(View view){
+        today_things_month = view.findViewById(R.id.today_things_month);
+        today_things_day = view.findViewById(R.id.today_things_day);
+        today_things_week = view.findViewById(R.id.today_things_week);
+    }
+
+    /**
+     * 更新每日待做时间
+     */
+    private void updateDate(){
+//        final SimpleDateFormat sdf = new SimpleDateFormat("MMM", Locale.getDefault());
+//        String month = sdf.format(new Date());
+//        DateTime.Now.ToString("MMMM",new System.Globalization.CultureInfo("en-us"));
+        Calendar c = Calendar.getInstance();
+        int month,day,week;
+        month = c.get(Calendar.MONTH);
+        day = c.get(Calendar.DAY_OF_MONTH);
+        week = c.get(Calendar.DAY_OF_WEEK);
+        today_things_month.setText(String.valueOf(month+1)+"月");
+        today_things_day.setText(String.valueOf(day));
+        today_things_week.setText(getWeek(c));
+    }
+
+    private String getWeek(Calendar c){
+        int week = c.get(Calendar.DAY_OF_WEEK);
+        String s;
+        switch (week){
+            case 1:
+                s= "周日";
+                break;
+            case 2:
+                s= "周一";
+            break;
+            case 3:
+                s="周二";
+            break;
+            case 4:
+                s="周三";
+            break;
+            case 5:
+                s="周四";
+            break;
+            case 6:
+                s="周五";
+            break;
+            case 7:
+                s="周六";
+            break;
+            default:
+                return "";
+        }
+        return s;
+    }
+
+    /**
+     * 获取轮播图
+     */
+    private void getBannerResourse(View view){
+        Api.configNoParams(ApiConfig.BANNER_RESOURCE).getRequest(new YJcallback() {
+            @Override
+            public void onSuccess(String res) {
+                BannerResourceResponse bannerResourceResponse = new Gson().fromJson(res,BannerResourceResponse.class);
+                if(bannerResourceResponse != null && bannerResourceResponse.getCode() == 0) {
+                    List<BannerResourceEntity> data = bannerResourceResponse.getData();
+                    mData = new ArrayList<>();
+                    //图片url数组
+                    for(int i=0;i<data.size();i++){
+                        BannerItem item = new BannerItem();
+                        item.title="";
+                        item.imgUrl = data.get(i).getGraphUrl();
+                        mData.add(item);
+                    }
+                    //更改ui
+                    runOnUiThread(new Runnable(){
+                        @Override
+                        public void run() {
+                            banner.setSource(mData).startScroll();
+                        }
+                    });
+
+                }
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+
+            }
+        });
+    }
+
+    private void getResourceImage(View view){
+        Api.configNoParams(ApiConfig.RESOURCE_IMAGE).getRequest(new YJcallback() {
+            @Override
+            public void onSuccess(String res) {
+                Log.i("uu",res);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+
+            }
+        });
+    }
+
+    private void getCurrentXunjian(View view){
+        HashMap<String,Object> map = new HashMap();
+        map.put("userId",6);
+        Api.config(ApiConfig.XUNJIAN_CURRENT,map).getRequest(new YJcallback() {
+            @Override
+            public void onSuccess(String res) {
+                Log.i("aa",res);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+
+            }
+        });
+    }
 }

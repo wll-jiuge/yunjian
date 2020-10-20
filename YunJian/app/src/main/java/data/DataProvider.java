@@ -21,11 +21,11 @@ public class DataProvider {
      * 轮播图文字
      */
     public static String[] titles = new String[]{
-            "AAAAAAA",
-            "BBBBBBB",
-            "CCCCCCC",
-            "DDDDDDD",
-            "EEEEEEE"
+            "",
+            "",
+            "",
+            "",
+            ""
     };
 
     /**
