@@ -12,12 +12,20 @@ public class ApiConfig {
     public static final String LOGIN="/sso/login";
     //获取验证码
     public static final String AUTHCODE="/sso/authcode";
-//    巡检当前任务路径
-    public static final String XUNJIAN_CURRENT="";
     //任务-超时任务
     public static final String TASK_OVERTIME="/mb/task/overTimeTask";
     //任务-当前任务
     public static final String TASK_CURRENT="/mb/task/currentTask";
     //任务-已完成任务
     public static final String TASK_FINISHED="/mb/task/finishedTask";
+//    巡检当前任务路径
+    public static final String XUNJIAN_CURRENT="/mb/dailytask/currentTask";
+//   巡检已完成路径
+    public static final String XUNJIAN_FINISH="";
+//    巡检超时路径
+    public static final String XUNJIAN_OVER="";
+//    轮播图路径
+    public static final String BANNER_RESOURCE="/mb/graph/select";
+//    日志路径
+    public static final String RESOURCE_IMAGE="/pc/resource/queryAllImag";
 }

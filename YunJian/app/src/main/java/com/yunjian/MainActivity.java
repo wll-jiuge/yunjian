@@ -177,7 +177,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void get_test(){
-        Api.configs(ApiConfig.AUTHCODE).getRequest(new YJcallback() {
+        Api.configNoParams(ApiConfig.AUTHCODE).getRequest(new YJcallback() {
             @Override
             public void onSuccess(String res) {
                 PicResponse picResponse =new Gson().fromJson(res,PicResponse.class);

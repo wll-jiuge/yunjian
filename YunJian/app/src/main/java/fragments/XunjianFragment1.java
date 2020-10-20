@@ -71,10 +71,11 @@ public class XunjianFragment1 extends BaseFragment {
                 @Override
                 public void onSuccess(String res) {
                     //把接收到的res转成响应类
-                    CurrenXunjianResponse currenXunjianResponse = new Gson().fromJson(res,CurrenXunjianResponse.class);
-                    List<CurrentXunjianItemEntity> data = currenXunjianResponse.getList();
-                    CurrentXunjianAdapter adapter = new CurrentXunjianAdapter(getActivity(),data);
-                    recyclerView.setAdapter(adapter);
+
+//                    CurrenXunjianResponse currenXunjianResponse = new Gson().fromJson(res,CurrenXunjianResponse.class);
+//                    List<CurrentXunjianItemEntity> data = currenXunjianResponse.getList();
+//                    CurrentXunjianAdapter adapter = new CurrentXunjianAdapter(getActivity(),data);
+//                    recyclerView.setAdapter(adapter);
                 }
 
                 @Override

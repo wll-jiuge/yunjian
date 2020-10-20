@@ -51,10 +51,21 @@ public class Api {
         return api;
     }
 
-    public static Api configs(String url){
+
+//    public static Api configs(String url){
+//        client = new OkHttpClient.Builder().build();
+//        requestUrl = ApiConfig.BASE_URL + url;
+//        HashMap<String,Object> map=new HashMap();
+
+    /**
+     * 无map参数构造实例
+     * @param url
+     * @return
+     */
+    public static Api configNoParams(String url){
         client = new OkHttpClient.Builder().build();
         requestUrl = ApiConfig.BASE_URL + url;
-        HashMap<String,Object> map=new HashMap();
+        HashMap<String,Object> map = new HashMap();
         map.put("","");
         mParams = map;
         return api;
@@ -111,7 +122,7 @@ public class Api {
             //            请求失败
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.i("ttil",e.getMessage());
+//                Log.i("ttil",e.getMessage());
                 callback.onFailure(e);
             }
             //            请求成功

@@ -28,6 +28,7 @@ public class ResourceFragment1 extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.resource1_recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(linearLayoutManager);
+        
         ResouceImageAdapter adapter = new ResouceImageAdapter(getContext());
         recyclerView.setAdapter(adapter);
         return view;
