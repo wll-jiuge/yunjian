@@ -43,7 +43,7 @@
                 app:srcCompat="@mipmap/ic_xunjian_item" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/xunjian_current_detail_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/test_name" />

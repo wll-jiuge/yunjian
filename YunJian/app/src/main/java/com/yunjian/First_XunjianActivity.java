@@ -9,11 +9,15 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 
 import com.google.android.material.tabs.TabLayout;
+import com.yunjian.api.Api;
+import com.yunjian.api.ApiConfig;
+import com.yunjian.api.YJcallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +27,7 @@ import fragments.XunjianFragment2;
 import fragments.XunjianFragment3;
 
 /**
- * The type First xunjian activity.
+ * The type First xunjian_current_xunjianxiangshape activity.
  *
  * @author 吴立柳
  * @package com.yunjian
@@ -65,7 +69,6 @@ public class First_XunjianActivity extends BaseActivity {
         toolbar = findViewById(R.id.toolbar_xunjian);
         viewPager = findViewById(R.id.viewpager_xunjian);
         textView=findViewById(R.id.txt_toolbar_xunjian);
-
         textView.setText("日常巡检");
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_navigation_back_white);
@@ -78,6 +81,8 @@ public class First_XunjianActivity extends BaseActivity {
                 finish();
             }
         });
+
+
 //        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
 //            @Override
 //            public boolean onMenuItemClick(MenuItem item) {
@@ -179,4 +184,6 @@ public class First_XunjianActivity extends BaseActivity {
 //        }
 //        return super.onMenuOpened(featureId, menu);
 //    }
+
+
 }

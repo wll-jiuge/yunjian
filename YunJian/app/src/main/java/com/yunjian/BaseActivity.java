@@ -52,4 +52,14 @@ public class BaseActivity  extends AppCompatActivity {
         editor.putString(key,value);
         editor.commit();
     }
+
+    /**
+     * 读取sharedpreference中的内容
+     * @param key
+     * @return
+     */
+    protected String getStringFromSp(String key){
+        SharedPreferences sp = getSharedPreferences("sp_token", MODE_PRIVATE);
+        return sp.getString(key,"");
+    }
 }

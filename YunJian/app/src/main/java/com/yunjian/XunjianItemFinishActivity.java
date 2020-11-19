@@ -38,7 +38,7 @@ import utils.GetPhotoFromPhotoAlbumUtils;
  * @date on 2020/9/6
  * @describe 巡检页面 --列表展示
  */
-public class XunjianItemActivity extends BaseActivity implements View.OnClickListener {
+public class XunjianItemFinishActivity extends BaseActivity implements View.OnClickListener {
     /**
      * The Xunjianitem name.
      */
@@ -74,7 +74,7 @@ public class XunjianItemActivity extends BaseActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.xunjian_item);
+        setContentView(R.layout.xunjian_item_finish);
         init();
         intent = getIntent();
         xunjianItemEntity = (XunjianItemEntity) getIntent().getSerializableExtra("listentity");
@@ -99,8 +99,8 @@ public class XunjianItemActivity extends BaseActivity implements View.OnClickLis
         findViewById(R.id.xunjian_camera).setOnClickListener(this);
         radioGroup = findViewById(R.id.xunjian_radioGroup);
         xunjian_imageView = findViewById(R.id.xunjian_imageView);
-        mListPopup = new XUISimplePopup(XunjianItemActivity.this, DataProvider.dpiItems)
-                .create(DensityUtils.dip2px(XunjianItemActivity.this, 170), (adapter, item, position) -> {
+        mListPopup = new XUISimplePopup(XunjianItemFinishActivity.this, DataProvider.dpiItems)
+                .create(DensityUtils.dip2px(XunjianItemFinishActivity.this, 170), (adapter, item, position) -> {
                     switch (item.getTitle().toString()){
                         case "系统相册":{
                             //调用系统相册
@@ -140,7 +140,7 @@ public class XunjianItemActivity extends BaseActivity implements View.OnClickLis
         switch (btnID){
             //提交
             case R.id.xunjian_item_submit:{
-                AlertDialog.Builder builder = new AlertDialog.Builder(XunjianItemActivity.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(XunjianItemFinishActivity.this);
                 builder.setTitle("提交");
                 builder.setMessage("您确定提交内容吗?");
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -216,13 +216,13 @@ public class XunjianItemActivity extends BaseActivity implements View.OnClickLis
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            uri = FileProvider.getUriForFile(XunjianItemActivity.this, "com.yunjian.fileprovider", cameraSavePath);
+            uri = FileProvider.getUriForFile(XunjianItemFinishActivity.this, "com.yunjian.fileprovider", cameraSavePath);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         } else {
             uri = Uri.fromFile(cameraSavePath);
         }
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
-        XunjianItemActivity.this.startActivityForResult(intent, 1);
+        XunjianItemFinishActivity.this.startActivityForResult(intent, 1);
     }
     /**
      * 获取权限
@@ -268,10 +268,10 @@ public class XunjianItemActivity extends BaseActivity implements View.OnClickLis
             }
             Log.d("拍照返回图片路径:", photoPath);
             //后面再改一下用GridView显示多张图片
-            Glide.with(XunjianItemActivity.this).load(photoPath).into(xunjian_imageView);
+            Glide.with(XunjianItemFinishActivity.this).load(photoPath).into(xunjian_imageView);
         } else if (requestCode == 2 && resultCode == RESULT_OK) {
             photoPath = GetPhotoFromPhotoAlbumUtils.getRealPathFromUri(this, data.getData());
-            Glide.with(XunjianItemActivity.this).load(photoPath).into(xunjian_imageView);
+            Glide.with(XunjianItemFinishActivity.this).load(photoPath).into(xunjian_imageView);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

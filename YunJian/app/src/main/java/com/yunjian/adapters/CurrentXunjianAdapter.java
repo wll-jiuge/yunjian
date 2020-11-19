@@ -1,34 +1,32 @@
 package com.yunjian.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yunjian.R;
-import com.yunjian.entity.CurrentXunjianItemEntity;
-import com.yunjian.entity.TaskItemEntity;
+import com.yunjian.XunjianItemCurrentActivity;
+import com.yunjian.entity.currentxunjian.CurrentXunjianItemEntity;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
  * @author 吴立柳
  * @package com.yunjian.adapters
  * @date on 2020/9/27
- * @describe 当前巡检页面
+ * @describe 当前巡检页面适配器
  */
 public class CurrentXunjianAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private Context mContext;
     private List<CurrentXunjianItemEntity> data;
-    private CurrentXunjianItemEntity jsonentity;
+    private int currentXunjianId;
     public CurrentXunjianAdapter(Context context,List<CurrentXunjianItemEntity> data){
         this.mContext=context;
         this.data=data;
@@ -47,15 +45,22 @@ public class CurrentXunjianAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         CurrentXunjianAdapter.ViewHolder myViewHolder = (CurrentXunjianAdapter.ViewHolder) holder;
         final CurrentXunjianItemEntity currentXunjianItemEntity= data.get(position);
-        myViewHolder.txt_test_tesname.setText(currentXunjianItemEntity.getName());
-        myViewHolder.txt_test_testfangfa.setText(currentXunjianItemEntity.getMethod());
-        myViewHolder.txt_test_teststandard.setText(currentXunjianItemEntity.getStandard());
-        myViewHolder.txt_test_testxiang.setText(currentXunjianItemEntity.getItems());
-        //获取系统时间
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy年MM月dd日");
-        Date curdate = new Date(System.currentTimeMillis());
-        String str = formatter.format(curdate);
-        myViewHolder.txt_test_time.setText(str);
+        myViewHolder.txt_current_name.setText(currentXunjianItemEntity.getTaskName());
+        myViewHolder.txt_current_content.setText(currentXunjianItemEntity.getTaskNote());
+        myViewHolder.txt_current_type.setText(currentXunjianItemEntity.getTaskTypeName());
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentXunjianId = data.get(position).getTaskId();
+                Intent intent = new Intent(mContext, XunjianItemCurrentActivity.class);
+//                传递ID,便于后面的数据请求
+                intent.putExtra("id",currentXunjianId);
+                mContext.startActivity(intent);
+            }
+        });
+
+
+
     }
 
     @Override
@@ -64,17 +69,14 @@ public class CurrentXunjianAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView txt_test_tesname;
-        private TextView txt_test_testfangfa;
-        private TextView txt_test_teststandard,txt_test_time;
-        private TextView txt_test_testxiang;
+        private TextView txt_current_name;
+        private TextView txt_current_content;
+        private TextView txt_current_type;
         public ViewHolder(@NonNull View view) {
             super(view);
-            txt_test_tesname = view.findViewById(R.id.txt_test_tesname);
-            txt_test_testfangfa = view.findViewById(R.id.txt_test_testfangfa);
-            txt_test_teststandard = view.findViewById(R.id.txt_test_teststandard);
-            txt_test_testxiang = view.findViewById(R.id.txt_test_testxiang);
-            txt_test_time = view.findViewById(R.id.txt_test_time);
+            txt_current_name = view.findViewById(R.id.txt_current_name);
+            txt_current_content = view.findViewById(R.id.txt_current_content);
+            txt_current_type = view.findViewById(R.id.txt_current_type);
         }
     }
 }

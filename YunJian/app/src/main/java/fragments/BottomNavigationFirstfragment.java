@@ -1,6 +1,8 @@
 package fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.renderscript.Sampler;
 import android.util.Log;
@@ -94,8 +96,8 @@ public class BottomNavigationFirstfragment extends BaseFragment {
         banner = v.findViewById(R.id.banner);
 //        请求资源
         getBannerResourse(v);
-        getResourceImage(v);
-        getCurrentXunjian(v);
+//        getResourceImage(v);
+
         //配置数据
 //        mData = DataProvider.getBannerList();
 //        simpleImageBanner.setSource(mData)
@@ -174,12 +176,11 @@ public class BottomNavigationFirstfragment extends BaseFragment {
 //        String month = sdf.format(new Date());
 //        DateTime.Now.ToString("MMMM",new System.Globalization.CultureInfo("en-us"));
         Calendar c = Calendar.getInstance();
-        int month,day,week;
+        int month,day;
         month = c.get(Calendar.MONTH);
         day = c.get(Calendar.DAY_OF_MONTH);
-        week = c.get(Calendar.DAY_OF_WEEK);
         today_things_month.setText(String.valueOf(month+1)+"月");
-        today_things_day.setText(String.valueOf(day));
+        today_things_day.setText(String.valueOf(day)+"日");
         today_things_week.setText(getWeek(c));
     }
 
@@ -251,26 +252,13 @@ public class BottomNavigationFirstfragment extends BaseFragment {
     }
 
     private void getResourceImage(View view){
-        Api.configNoParams(ApiConfig.RESOURCE_IMAGE).getRequest(new YJcallback() {
-            @Override
-            public void onSuccess(String res) {
-                Log.i("uu",res);
-            }
-
-            @Override
-            public void onFailure(Exception e) {
-
-            }
-        });
-    }
-
-    private void getCurrentXunjian(View view){
         HashMap<String,Object> map = new HashMap();
-        map.put("userId",6);
-        Api.config(ApiConfig.XUNJIAN_CURRENT,map).getRequest(new YJcallback() {
+        map.put("pageNum",0);
+        map.put("pageSize",5);
+        Api.config(ApiConfig.RESOURCE_IMAGE,map).getRequest(new YJcallback() {
             @Override
             public void onSuccess(String res) {
-                Log.i("aa",res);
+                Log.i("img",res);
             }
 
             @Override
@@ -279,4 +267,7 @@ public class BottomNavigationFirstfragment extends BaseFragment {
             }
         });
     }
+
+
+
 }

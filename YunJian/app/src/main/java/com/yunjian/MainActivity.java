@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -103,6 +104,9 @@ public class MainActivity extends BaseActivity {
         //Gson gson = new Gson();
         //loginResponse= gson.fromJson(res,LoginResponse.class);
         //token = loginResponse.getToken();
+        SharedPreferences sharedPreferences = getSharedPreferences("sp_token",0);
+        token = sharedPreferences.getString("login_token","string");
+        Log.i("login",token);
         if (token!=null){
             Intent intent = new Intent(MainActivity.this, Mine_Activity.class);
             startActivity(intent);
@@ -158,7 +162,7 @@ public class MainActivity extends BaseActivity {
                 public void onSuccess(String res) {
                     TokenResponse tokenResponse=new Gson().fromJson(res, TokenResponse.class);
                     token=tokenResponse.getData().getToken();
-                    Log.i("login_token",token);
+//                    Log.i("login_token",token);
                     saveStringtoSp("login_token",token);
                 }
                 @Override
