@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MineListActivity">
+    tools:context=".Minelist_account_Activity">
 <androidx.viewpager.widget.ViewPager
     android:id="@+id/viewpager_minelist"
     android:layout_width="match_parent"

@@ -28,4 +28,12 @@ public class ApiConfig {
     public static final String BANNER_RESOURCE="/mb/graph/select";
 //    日志路径
     public static final String RESOURCE_IMAGE="/pc/resource/queryAllImag";
+    //用户帐号信息
+    public static final String USER_ACCOUNT="/mb/user/selectAccountByUserId";
+    //用户基本信息
+    public static final String USER_BASIC="/mb/user/selectByUserId";
+    //用户部门信息
+    public static final String USER_DEPTMENT="/mb/user/selectDeptByUserId";
+    //用户班组信息
+    public static final String USER_TEAM="/mb/user/selectTeamByUserId";
 }

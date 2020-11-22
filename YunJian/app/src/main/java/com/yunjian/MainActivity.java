@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -91,15 +92,21 @@ public class MainActivity extends BaseActivity {
             token=msg.getData().getString("token");
             bitmap=msg.getData().getParcelable("bitmap");
             enter_test.setImageBitmap(bitmap);
-            //saveStringtoSp("token",token);
-            //bitmap = (Bitmap) msg.obj;
-            //enter_test.setImageBitmap(bitmap);
         }
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //删除token
+        //deleteStringfromSp("token");
+        //deleteStringfromSp("login_token");
+
+        token=getStringFromSp("login_token");
+
+        //SharedPreferences sharedPreferences=getSharedPreferences("sp_token",0);
+        //token=sharedPreferences.getString("login_token","string");
         //Gson gson = new Gson();
         //loginResponse= gson.fromJson(res,LoginResponse.class);
         //token = loginResponse.getToken();
@@ -158,7 +165,7 @@ public class MainActivity extends BaseActivity {
                 public void onSuccess(String res) {
                     TokenResponse tokenResponse=new Gson().fromJson(res, TokenResponse.class);
                     token=tokenResponse.getData().getToken();
-                    Log.i("login_token",token);
+                    //Log.i("login_token",token);
                     saveStringtoSp("login_token",token);
                 }
                 @Override
@@ -167,8 +174,7 @@ public class MainActivity extends BaseActivity {
                 }
             });
 //                   将token保存到SharedPreferences文件中
-//            base.saveStringtoSp("token",token);
-            saveStringtoSp("token",token);
+            //saveStringtoSp("token",token);
            navigateTo(Mine_Activity.class);
         }else
         {

@@ -17,9 +17,14 @@ import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.yunjian.MainActivity;
-import com.yunjian.MineListActivity;
+import com.yunjian.Minelist_account_Activity;
+import com.yunjian.Minelist_deptment_Activity;
+import com.yunjian.Minelist_team_Activity;
 import com.yunjian.R;
-import com.yunjian.entity.Personentity;
+import com.yunjian.api.Api;
+import com.yunjian.api.ApiConfig;
+import com.yunjian.api.YJcallback;
+import com.yunjian.entity.BasicResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +39,7 @@ import java.util.Map;
  * @describe 我的fragment
  */
 public class BottomNavigationLastfragment extends BaseFragment {
-    private Personentity personentity;
+    //private PersonEntity personentity;
     /**
      * The List view.
      */
@@ -57,7 +62,7 @@ public class BottomNavigationLastfragment extends BaseFragment {
      * The Res.
      */
     Button btn_exit;
-    String res = "{" +
+    /*String res = "{" +
             "  \"msg\": \"ok\"," +
             "  \"code\": 0," +
             "  \"name\": \"不知名的路人甲\"," +
@@ -67,7 +72,7 @@ public class BottomNavigationLastfragment extends BaseFragment {
             "  \"department\": \"部门A\"," +
             "  \"project\": \"项目A\"," +
             "  \"programs\": [\"项目A\",\"项目B\",\"项目C\"]" +
-            "}";
+            "}";*/
     /**
      * The Mine list.
      */
@@ -93,11 +98,33 @@ public class BottomNavigationLastfragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.bottom_navigation_last,container,false);
         listView = view.findViewById(R.id.listView);
-        personentity = new Gson().fromJson(res,Personentity.class);
+        //personentity = new Gson().fromJson(res, PersonEntity.class);
+
+        Api.configNoParams(ApiConfig.USER_BASIC).getRequestUseHeader(new YJcallback() {
+            @Override
+            public void onSuccess(String res) {
+                BasicResponse basicResponse=new Gson().fromJson(res, BasicResponse.class);
+                if(basicResponse.getCode()==0){
+                    username=view.findViewById(R.id.Mine_username);
+                    role = view.findViewById(R.id.Mine_userrole);
+                    project = view.findViewById(R.id.Mine_userProject);
+                    username.setText(getResources().getString(R.string.mine_username)+basicResponse.getData().getUserName());
+                    role.setText(getResources().getString(R.string.mine_role)+basicResponse.getData().getRoleName());
+                    project.setText(getResources().getString(R.string.mine_project)+basicResponse.getData().getPrjName());
+                }
+
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+
+            }
+        });
+
         //数据请求成功
-        if(personentity!=null&&personentity.getCode()==0){
+        /*if(personentity!=null&&()==0){
             init(view);
-        }
+        }*/
 
         List<Map<String,Object>> list = new ArrayList<>();
         //往列表中添加数据
@@ -115,15 +142,21 @@ public class BottomNavigationLastfragment extends BaseFragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch(i){
                     case 0:{
-                        Intent intent = new Intent(getActivity(), MineListActivity.class);
+                        Intent intent = new Intent(getActivity(), Minelist_account_Activity.class);
                         intent.putExtra("position",i);
                         startActivity(intent);
                         break;
                     }
                     case 1:{
+                        Intent intent = new Intent(getActivity(), Minelist_deptment_Activity.class);
+                        intent.putExtra("position",i);
+                        startActivity(intent);
                         break;
                     }
                     case 2:{
+                        Intent intent = new Intent(getActivity(), Minelist_team_Activity.class);
+                        intent.putExtra("position",i);
+                        startActivity(intent);
                         break;
                     }
                     case 3:{
@@ -169,14 +202,14 @@ public class BottomNavigationLastfragment extends BaseFragment {
      * 初始化
      * @param view
      */
-    private void init(View view){
+    /*private void init(View view){
         username=view.findViewById(R.id.Mine_username);
         role = view.findViewById(R.id.Mine_userrole);
         project = view.findViewById(R.id.Mine_userProject);
-        username.setText(getResources().getString(R.string.mine_username)+personentity.getName());
-        role.setText(getResources().getString(R.string.mine_role)+personentity.getRole());
-        project.setText(getResources().getString(R.string.mine_project)+personentity.getProject());
-    }
+        username.setText(getResources().getString(R.string.mine_username)+.getUserName());
+        role.setText(getResources().getString(R.string.mine_role)+personentity.getRoleName());
+        project.setText(getResources().getString(R.string.mine_project)+personentity.getPrjName());
+    }*/
 
 
 }

@@ -2,48 +2,78 @@ package com.yunjian.entity;
 
 import java.io.Serializable;
 
-/**
- * name : aaa
- * method : 测试方法1
- * standard : 测试标准一
- * items : aaa数据项内容
- */
-
 public class TaskItemEntity implements Serializable {
-    private String name;
-    private String method;
-    private String standard;
-    private String items;
+    /**
+     * inspItemId : 0
+     * taskId : 0
+     * taskName : string
+     * taskNote : string
+     * taskPlanDate : 2020-10-21T12:27:35.305Z
+     * taskTypeName : string
+     * userId : 0
+     */
 
-    public String getName() {
-        return name;
+    private int inspItemId;
+    private int taskId;
+    private String taskName;
+    private String taskNote;
+    private String taskPlanDate;
+    private String taskTypeName;
+    private int userId;
+
+    public int getInspItemId() {
+        return inspItemId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInspItemId(int inspItemId) {
+        this.inspItemId = inspItemId;
     }
 
-    public String getMethod() {
-        return method;
+    public int getTaskId() {
+        return taskId;
     }
 
-    public void setMethod(String method) {
-        this.method = method;
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
     }
 
-    public String getStandard() {
-        return standard;
+    public String getTaskName() {
+        return taskName;
     }
 
-    public void setStandard(String standard) {
-        this.standard = standard;
+    public void setTaskName(String taskName) {
+        this.taskName = taskName;
     }
 
-    public String getItems() {
-        return items;
+    public String getTaskNote() {
+        return taskNote;
     }
 
-    public void setItems(String items) {
-        this.items = items;
+    public void setTaskNote(String taskNote) {
+        this.taskNote = taskNote;
+    }
+
+    public String getTaskPlanDate() {
+        return taskPlanDate;
+    }
+
+    public void setTaskPlanDate(String taskPlanDate) {
+        this.taskPlanDate = taskPlanDate;
+    }
+
+    public String getTaskTypeName() {
+        return taskTypeName;
+    }
+
+    public void setTaskTypeName(String taskTypeName) {
+        this.taskTypeName = taskTypeName;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

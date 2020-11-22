@@ -52,4 +52,18 @@ public class BaseActivity  extends AppCompatActivity {
         editor.putString(key,value);
         editor.commit();
     }
+
+    protected void deleteStringfromSp(String key){
+        SharedPreferences sp = getSharedPreferences("sp_token",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.remove(key);
+        editor.commit();
+
+    }
+
+    protected String getStringFromSp(String key){
+        SharedPreferences sp = getSharedPreferences("sp_token", MODE_PRIVATE);
+        return sp.getString(key,"");
+    }
+
 }

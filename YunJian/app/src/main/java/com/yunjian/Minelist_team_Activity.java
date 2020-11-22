@@ -1,7 +1,6 @@
 package com.yunjian;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -13,15 +12,16 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-import fragments.minelist.Minelist_myaccount;
+import fragments.minelist.Minelist_mydeptment;
+import fragments.minelist.Minelist_myteam;
 
 /**
- * @author 吴立柳
+ * @author 何楚玥
  * @package com.yunjian
- * @date on 2020/9/6
+ * @date on 2020/11/21
  * @describe 我的页面 --列表
  */
-public class MineListActivity extends BaseActivity {
+public class Minelist_team_Activity extends BaseActivity {
     /**
      * The View pager.
      */
@@ -52,12 +52,12 @@ public class MineListActivity extends BaseActivity {
      */
     private void initFragment(){
         fragments = new ArrayList<>();
-        fragments.add(new Minelist_myaccount());
+        fragments.add(new Minelist_myteam());
     }
 
     /*
-    * 适配器类
-    * */
+     * 适配器类
+     * */
     private class ViewAdapter extends FragmentPagerAdapter {
 
         private List<Fragment> fragments;

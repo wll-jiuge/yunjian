@@ -25,7 +25,9 @@ public class TaskItemActivity extends BaseActivity {
     taskitem_standard, /**
      * The Taskitem project.
      */
-    taskitem_project;
+    taskitem_project,
+
+    taskitem_day;
     /**
      * The Intent.
      */
@@ -51,15 +53,17 @@ public class TaskItemActivity extends BaseActivity {
         taskitem_method=findViewById(R.id.txt_taskitem_method);
         taskitem_standard=findViewById(R.id.txt_taskitem_standard);
         taskitem_project=findViewById(R.id.txt_taskitem_project);
+        taskitem_day=findViewById(R.id.day_time);
     }
 
     /**
      * 列表信息更改
      */
     private void changetext(){
-        taskitem_name.setText(taskItemEntity.getName());
-        taskitem_method.setText(taskItemEntity.getMethod());
-        taskitem_standard.setText(taskItemEntity.getStandard());
-        taskitem_project.setText(taskItemEntity.getItems());
+        taskitem_name.setText(taskItemEntity.getTaskName());
+        taskitem_method.setText(taskItemEntity.getTaskPlanDate());
+        taskitem_standard.setText(taskItemEntity.getTaskTypeName());
+        taskitem_project.setText(taskItemEntity.getTaskTypeName());
+        taskitem_day.setText(taskItemEntity.getTaskPlanDate());
     }
 }

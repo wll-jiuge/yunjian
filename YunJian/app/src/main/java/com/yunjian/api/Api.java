@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -63,7 +64,10 @@ public class Api {
      * @return
      */
     public static Api configNoParams(String url){
-        client = new OkHttpClient.Builder().build();
+        client = new OkHttpClient.Builder()
+                .connectTimeout(20L, TimeUnit.SECONDS)
+                .readTimeout(20L,TimeUnit.SECONDS)
+                .build();
         requestUrl = ApiConfig.BASE_URL + url;
         HashMap<String,Object> map = new HashMap();
         map.put("","");
@@ -131,6 +135,34 @@ public class Api {
 //                得到子线程
                 String result = response.body().string();
                 Log.i("ttit",result);
+                callback.onSuccess(result);
+            }
+        });
+    }
+
+    public void getRequestUseHeader(YJcallback callback){
+        String url = getAppendUrl(requestUrl,mParams);
+        Request request = new Request.Builder()
+                .addHeader("Authorization","login_token_2d2b2a39-d372-468e-a7f5-3a60cfd82dcf")
+                .url(url)
+                .get()
+                .build();
+//        构建call对象
+        Call call = client.newCall(request);
+//        异步get请求
+        call.enqueue(new Callback() {
+            //            请求失败
+            @Override
+            public void onFailure(Call call, IOException e) {
+//                Log.i("ttil",e.getMessage());
+                callback.onFailure(e);
+            }
+            //            请求成功
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+//                得到子线程
+                String result = response.body().string();
+//                Log.i("ttit",result);
                 callback.onSuccess(result);
             }
         });
