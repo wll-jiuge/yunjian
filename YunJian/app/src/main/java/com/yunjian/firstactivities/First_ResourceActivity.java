@@ -1,8 +1,7 @@
-package com.yunjian;
+package com.yunjian.firstactivities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,14 +13,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.yunjian.BaseActivity;
 import com.yunjian.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import fragments.ResourceFragment1;
-import fragments.ResourceFragment2;
-import fragments.ResourceFragment3;
+import fragments.resource.ResourceFragment1;
+import fragments.resource.ResourceFragment2;
+import fragments.resource.ResourceFragment3;
 
 /**
  * The type First resource.

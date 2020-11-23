@@ -1,4 +1,4 @@
-package com.yunjian.entity;
+package com.yunjian.entity.banner;
 
 import java.io.Serializable;
 

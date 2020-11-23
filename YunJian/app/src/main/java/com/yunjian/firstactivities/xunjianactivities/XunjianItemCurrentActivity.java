@@ -1,51 +1,30 @@
-package com.yunjian;
+package com.yunjian.firstactivities.xunjianactivities;
 
-import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.xuexiang.xui.widget.popupwindow.popup.XUISimplePopup;
-import com.xuexiang.xutil.display.DensityUtils;
+import com.yunjian.BaseActivity;
+import com.yunjian.R;
 import com.yunjian.adapters.currentxunjianadapters.CurrentXunjianXiangAdapter;
 import com.yunjian.api.Api;
 import com.yunjian.api.ApiConfig;
 import com.yunjian.api.YJcallback;
 import com.yunjian.entity.currentxunjian.CurrentXunjianDetailResponse;
-import com.yunjian.entity.currentxunjian.CurrentXunjianResponse;
 
-import java.io.File;
 import java.util.HashMap;
-
-import data.DataProvider;
-import pub.devrel.easypermissions.EasyPermissions;
-import utils.GetPhotoFromPhotoAlbumUtils;
-import utils.XToastUtils;
 
 /**
  * @author 吴立柳
  * @package com.yunjian
  * @date on 2020/9/6
- * @describe 巡检页面 --列表展示
+ * @describe 巡检页面 --当前详情展示
  */
 public class XunjianItemCurrentActivity extends BaseActivity implements View.OnClickListener {
     /**
@@ -56,7 +35,7 @@ public class XunjianItemCurrentActivity extends BaseActivity implements View.OnC
     Intent intent;
 
 //    第一层recycleview----检验项
-    private RecyclerView recyclerView_Jianyanxiang;
+    private RecyclerView recyclerView_Jianyanxiang,recycleview_std;
 
 
 //    File cameraSavePath;//拍照照片路径
@@ -85,11 +64,12 @@ public class XunjianItemCurrentActivity extends BaseActivity implements View.OnC
      */
     private void init(){
         xunjianitem_name = findViewById(R.id.xunjian_current_detail_name);
-//        初始化recycleview
+//        第一个recycle
         recyclerView_Jianyanxiang = findViewById(R.id.xunjian_current_jianyanxiang_recycleview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView_Jianyanxiang.setLayoutManager(linearLayoutManager);
+
 //        配置适配器
 
 //        findViewById(R.id.xunjian_camera).setOnClickListener(this);
@@ -128,6 +108,7 @@ public class XunjianItemCurrentActivity extends BaseActivity implements View.OnC
                         xunjianitem_name.setText(response.getData().getTaskName());
                         CurrentXunjianXiangAdapter adapter = new CurrentXunjianXiangAdapter(XunjianItemCurrentActivity.this,response.getData().getCurrentDailyTaskDetailsItemVos());
                         recyclerView_Jianyanxiang.setAdapter(adapter);
+
                     }
                 }
             });
@@ -248,7 +229,6 @@ public class XunjianItemCurrentActivity extends BaseActivity implements View.OnC
         Api.config(ApiConfig.XUNJIAN_CURRENT_DETAIL,params).getRequest(new YJcallback() {
             @Override
             public void onSuccess(String res) {
-                Log.i("detail",res);
                 changeUI(res);
             }
 

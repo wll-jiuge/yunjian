@@ -1,4 +1,4 @@
-package fragments;
+package fragments.xunjian;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.yunjian.R;
-import com.yunjian.adapters.CurrentXunjianAdapter;
+import com.yunjian.adapters.currentxunjianadapters.CurrentXunjianAdapter;
 import com.yunjian.api.Api;
 import com.yunjian.api.ApiConfig;
 import com.yunjian.api.YJcallback;
@@ -21,6 +21,8 @@ import com.yunjian.entity.currentxunjian.CurrentXunjianResponse;
 import com.yunjian.entity.currentxunjian.CurrentXunjianItemEntity;
 
 import java.util.List;
+
+import fragments.BaseFragment;
 
 import static com.xuexiang.xutil.XUtil.runOnUiThread;
 

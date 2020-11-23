@@ -1,8 +1,6 @@
-package com.yunjian;
+package com.yunjian.firstactivities;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -15,11 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.yunjian.BaseActivity;
 import com.yunjian.R;
 
-import java.util.List;
-
-import fragments.NotificationFragment;
+import fragments.notification.NotificationFragment;
 
 /**
  *@package com.yunjian

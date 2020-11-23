@@ -31,7 +31,7 @@ public class CurrentXunjianStdLineAdapter extends RecyclerView.Adapter<RecyclerV
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.xunjian_item_current_detail_stdline,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.xunjian_item_current_detail_stdline,null);
         CurrentXunjianStdLineAdapter.ViewHolder viewHoler=new CurrentXunjianStdLineAdapter.ViewHolder(view);
         return viewHoler;
     }

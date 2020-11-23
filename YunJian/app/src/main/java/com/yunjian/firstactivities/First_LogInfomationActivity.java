@@ -1,8 +1,7 @@
-package com.yunjian;
+package com.yunjian.firstactivities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -15,14 +14,15 @@ import android.widget.TextView;
 
 
 import com.google.android.material.tabs.TabLayout;
+import com.yunjian.BaseActivity;
 import com.yunjian.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import fragments.LoginfomationFragment1;
-import fragments.LoginfomationFragment2;
-import fragments.LoginfomationFragment3;
+import fragments.loginfomation.LoginfomationFragment1;
+import fragments.loginfomation.LoginfomationFragment2;
+import fragments.loginfomation.LoginfomationFragment3;
 
 /**
  * The type First log infomation.

@@ -1,4 +1,4 @@
-package com.yunjian.adapters;
+package com.yunjian.adapters.currentxunjianadapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yunjian.R;
-import com.yunjian.XunjianItemCurrentActivity;
+import com.yunjian.firstactivities.xunjianactivities.XunjianItemCurrentActivity;
 import com.yunjian.entity.currentxunjian.CurrentXunjianItemEntity;
 
 import java.util.List;

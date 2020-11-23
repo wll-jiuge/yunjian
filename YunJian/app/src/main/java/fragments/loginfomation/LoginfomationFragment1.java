@@ -1,4 +1,4 @@
-package fragments;
+package fragments.loginfomation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.yunjian.R;
 import com.yunjian.adapters.LoginfoListAdapter;
 
+import fragments.BaseFragment;
 import utils.StringUtils;
 
 /**

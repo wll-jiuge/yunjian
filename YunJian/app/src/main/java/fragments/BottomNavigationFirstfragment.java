@@ -1,10 +1,7 @@
 package fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.renderscript.Sampler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,35 +13,27 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
 import com.xuexiang.xui.widget.banner.widget.banner.BannerItem;
 import com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner;
-import com.xuexiang.xui.widget.banner.widget.banner.base.BaseBanner;
-import com.yunjian.First_LogInfomationActivity;
-import com.yunjian.First_NotificationActivity;
-import com.yunjian.First_ResourceActivity;
-import com.yunjian.First_XunjianActivity;
+import com.yunjian.firstactivities.First_LogInfomationActivity;
+import com.yunjian.firstactivities.First_NotificationActivity;
+import com.yunjian.firstactivities.First_ResourceActivity;
+import com.yunjian.firstactivities.xunjianactivities.First_XunjianActivity;
 import com.yunjian.R;
 import com.yunjian.api.Api;
 import com.yunjian.api.ApiConfig;
 import com.yunjian.api.YJcallback;
-import com.yunjian.entity.BannerResourceEntity;
-import com.yunjian.entity.BannerResourceResponse;
+import com.yunjian.entity.banner.BannerResourceEntity;
+import com.yunjian.entity.banner.BannerResourceResponse;
 import com.yunjian.widget.RadiusImageBanner;
 
-import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
-
-import data.DataProvider;
 
 import static com.xuexiang.xutil.XUtil.runOnUiThread;
 

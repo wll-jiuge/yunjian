@@ -25,6 +25,7 @@ import java.util.List;
 public class CurrentXunjianXiangAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private List<CurrentXunjianDetailsVosEntity> data;
+    private  CurrentXunjianDetailsVosEntity entity;
 
     public CurrentXunjianXiangAdapter(Context context, List<CurrentXunjianDetailsVosEntity> data){
         this.data = data;
@@ -32,7 +33,7 @@ public class CurrentXunjianXiangAdapter extends RecyclerView.Adapter<RecyclerVie
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.xunjian_item_current_datail_xunjianxiang,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.xunjian_item_current_datail_xunjianxiang,null);
         CurrentXunjianXiangAdapter.ViewHolder viewHoler=new CurrentXunjianXiangAdapter.ViewHolder(view);
         return viewHoler;
     }
@@ -40,15 +41,16 @@ public class CurrentXunjianXiangAdapter extends RecyclerView.Adapter<RecyclerVie
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         CurrentXunjianXiangAdapter.ViewHolder myViewHolder = (CurrentXunjianXiangAdapter.ViewHolder) holder;
+        entity = data.get(holder.getAdapterPosition());
         myViewHolder.xunjianxiang.setText(data.get(position).getInspItemName());
         myViewHolder.xunjian_current_xunjianxiang_method.setText(data.get(position).getInspMethodContent().toString());
-        Log.i("第三层",data.get(position).getInspStdContent().toString());
-//        此处嵌套第三层recycleview
+//        此处嵌套第2层recycleview
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(holder.itemView.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         myViewHolder.recyclerView_xunjianxiangStd.setLayoutManager(linearLayoutManager);
 //        配置适配器
-        CurrentXunjianStdAdapter adapter = new CurrentXunjianStdAdapter(data.get(position).getInspStdContent());
+        Log.i("holder打印了几次",holder.toString());
+        CurrentXunjianStdAdapter adapter = new CurrentXunjianStdAdapter(entity.getInspStdContent());
         myViewHolder.recyclerView_xunjianxiangStd.setAdapter(adapter);
     }
 

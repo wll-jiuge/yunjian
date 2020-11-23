@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.yunjian.R;
-import com.yunjian.XunjianItemFinishActivity;
+import com.yunjian.firstactivities.xunjianactivities.XunjianItemTimeoutActivity;
 import com.yunjian.entity.XunjianItemEntity;
 
 import java.util.List;
@@ -45,7 +45,7 @@ public class TestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             @Override
             public void onClick(View view) {
                 jsonentity = data.get(position);
-                Intent intent = new Intent(mContext, XunjianItemFinishActivity.class);
+                Intent intent = new Intent(mContext, XunjianItemTimeoutActivity.class);
 //                传递单个列表对象
                 intent.putExtra("listentity",jsonentity);
                 intent.putExtra("position",position);

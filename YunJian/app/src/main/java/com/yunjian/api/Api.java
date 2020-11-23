@@ -152,7 +152,7 @@ public class Api {
     public void getRequestUseHeader(YJcallback callback){
         String url = getAppendUrl(requestUrl,mParams);
         Request request = new Request.Builder()
-                .addHeader("Authorization","login_token_7df38267-59f3-4b8c-98a5-a2c08e05bbd0")
+                .addHeader("Authorization","login_token_89cd0213-c649-42cc-8af5-c540f60eca3d")
                 .url(url)
                 .get()
                 .build();

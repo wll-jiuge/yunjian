@@ -24,7 +24,9 @@ public class ApiConfig {
 //    巡检当前任务详细路径
     public static final String XUNJIAN_CURRENT_DETAIL="/mb/dailytask/currentTaskDetails";
 //   巡检已完成路径
-    public static final String XUNJIAN_FINISH="";
+    public static final String XUNJIAN_FINISH="/mb/dailytask/finishedTask";
+//    巡检已完成详细路径
+    public static final String XUNJIAN_FINISH_DETAIL="/mb/dailytask/finishedTaskDetails";
 //    巡检超时路径
     public static final String XUNJIAN_OVER="";
 //    轮播图路径

@@ -1,4 +1,4 @@
-package fragments;
+package fragments.xunjian;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +19,8 @@ import com.yunjian.entity.XunjianItemResponse;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import fragments.BaseFragment;
 
 /**
  * The type Second fragment 3.

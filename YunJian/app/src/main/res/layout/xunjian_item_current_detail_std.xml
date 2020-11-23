@@ -3,23 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="@dimen/dimen_25dp"
-            android:layout_height="@dimen/dimen_25dp"
-            android:layout_marginBottom="@dimen/dimen_5dp"
-            app:srcCompat="@mipmap/icon_rectangle_green" />
-
-        <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="检验标准"></TextView>
-    </LinearLayout>
 
     <TextView
         android:id="@+id/xunjian_current_std_content"
@@ -28,6 +11,6 @@
         android:text="内容"></TextView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/xunjian_current_stdline_recycleview"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

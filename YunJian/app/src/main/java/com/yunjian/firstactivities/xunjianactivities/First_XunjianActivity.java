@@ -1,4 +1,4 @@
-package com.yunjian;
+package com.yunjian.firstactivities.xunjianactivities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,22 +9,20 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 
 import com.google.android.material.tabs.TabLayout;
-import com.yunjian.api.Api;
-import com.yunjian.api.ApiConfig;
-import com.yunjian.api.YJcallback;
+import com.yunjian.AddXunjianActivity;
+import com.yunjian.BaseActivity;
+import com.yunjian.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import fragments.XunjianFragment1;
-import fragments.XunjianFragment2;
-import fragments.XunjianFragment3;
+import fragments.xunjian.XunjianFragment1;
+import fragments.xunjian.XunjianFragment2;
 
 /**
  * The type First xunjian_current_xunjianxiangshape activity.
@@ -54,7 +52,7 @@ public class First_XunjianActivity extends BaseActivity {
     /**
      * The Title.
      */
-    String[] title = {"当前任务", "已完成任务", "超时任务"};
+    String[] title = {"当前任务", "已完成任务"};
     /**
      * The Fragments.
      */
@@ -100,7 +98,8 @@ public class First_XunjianActivity extends BaseActivity {
         fragments = new ArrayList<>();
         fragments.add(new XunjianFragment1());
         fragments.add(new XunjianFragment2());
-        fragments.add(new XunjianFragment3());
+//        超时去除
+//        fragments.add(new XunjianFragment3());
     }
 
     /**

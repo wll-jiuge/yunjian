@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".First_LogInfomationActivity">
+    tools:context=".firstactivities.First_LogInfomationActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_loginfomation"

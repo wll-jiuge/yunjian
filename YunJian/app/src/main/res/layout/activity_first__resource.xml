@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".First_ResourceActivity">
+    tools:context=".firstactivities.First_ResourceActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_resource"
