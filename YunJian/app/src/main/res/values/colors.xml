@@ -11,6 +11,9 @@
     <color name="first_border">#f1f2f6</color>
 <!--    巡检图标颜色-->
     <color name="xunjian_icon_color">#48E74E</color>
+<!--    巡检的背景颜色-->
+    <color name="xunjian_bg">#54e8c8</color>
 <!--    日志良好背景颜色-->
     <color name="loginfo_list_min_situation">#47C84D</color>
+
 </resources>

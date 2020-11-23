@@ -7,7 +7,8 @@ package com.yunjian.api;
  * @describe APi路径
  */
 public class ApiConfig {
-    public static final String BASE_URL="http://8.129.77.225:10086";
+//    public static final String BASE_URL="http://47.112.247.115:10086";
+    public static final String BASE_URL = "http://8.129.77.225:10086";
     //登录
     public static final String LOGIN="/sso/login";
     //获取验证码
@@ -20,8 +21,12 @@ public class ApiConfig {
     public static final String TASK_FINISHED="/mb/task/finishedTask";
 //    巡检当前任务路径
     public static final String XUNJIAN_CURRENT="/mb/dailytask/currentTask";
+//    巡检当前任务详细路径
+    public static final String XUNJIAN_CURRENT_DETAIL="/mb/dailytask/currentTaskDetails";
 //   巡检已完成路径
-    public static final String XUNJIAN_FINISH="";
+    public static final String XUNJIAN_FINISH="/mb/dailytask/finishedTask";
+//    巡检已完成详细路径
+    public static final String XUNJIAN_FINISH_DETAIL="/mb/dailytask/finishedTaskDetails";
 //    巡检超时路径
     public static final String XUNJIAN_OVER="";
 //    轮播图路径
@@ -36,4 +41,5 @@ public class ApiConfig {
     public static final String USER_DEPTMENT="/mb/user/selectDeptByUserId";
     //用户班组信息
     public static final String USER_TEAM="/mb/user/selectTeamByUserId";
+
 }

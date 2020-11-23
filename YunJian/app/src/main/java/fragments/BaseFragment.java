@@ -1,5 +1,6 @@
 package fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
@@ -45,7 +46,7 @@ public class BaseFragment extends Fragment {
      * @return
      */
     protected String getStringFromSp(String key){
-        SharedPreferences sp = getActivity().getSharedPreferences("sp_token",MODE_PRIVATE);
-        return sp.getString("key","");
+        SharedPreferences sp = getActivity().getSharedPreferences("sp_token", MODE_PRIVATE);
+        return sp.getString(key,"");
     }
 }

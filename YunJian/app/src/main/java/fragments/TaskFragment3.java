@@ -1,13 +1,9 @@
 package fragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,12 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.yunjian.R;
 import com.yunjian.adapters.TaskAdapter;
-import com.yunjian.api.Api;
-import com.yunjian.api.ApiConfig;
-import com.yunjian.api.YJcallback;
 import com.yunjian.entity.TaskItemEntity;
 import com.yunjian.entity.TaskItemResponse;
-import com.yunjian.entity.XunjianItemResponse;
 
 
 import java.util.List;

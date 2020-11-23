@@ -46,7 +46,10 @@ public class Api {
      * @return api
      */
     public static Api config(String url,HashMap<String,Object> params){
-        client = new OkHttpClient.Builder().build();
+        client = new OkHttpClient.Builder()
+                .connectTimeout(20L, TimeUnit.SECONDS)
+                .readTimeout(20L,TimeUnit.SECONDS)
+                .build();
         requestUrl = ApiConfig.BASE_URL + url;
         mParams = params;
         return api;
@@ -134,7 +137,41 @@ public class Api {
             public void onResponse(Call call, Response response) throws IOException {
 //                得到子线程
                 String result = response.body().string();
-                Log.i("ttit",result);
+//                Log.i("ttit",result);
+                callback.onSuccess(result);
+            }
+        });
+    }
+
+    /**
+     * 需要header的get请求
+     * @param callback
+     */
+
+
+    public void getRequestUseHeader(YJcallback callback){
+        String url = getAppendUrl(requestUrl,mParams);
+        Request request = new Request.Builder()
+                .addHeader("Authorization","login_token_89cd0213-c649-42cc-8af5-c540f60eca3d")
+                .url(url)
+                .get()
+                .build();
+//        构建call对象
+        Call call = client.newCall(request);
+//        异步get请求
+        call.enqueue(new Callback() {
+            //            请求失败
+            @Override
+            public void onFailure(Call call, IOException e) {
+//                Log.i("ttil",e.getMessage());
+                callback.onFailure(e);
+            }
+            //            请求成功
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+//                得到子线程
+                String result = response.body().string();
+//                Log.i("ttit",result);
                 callback.onSuccess(result);
             }
         });
