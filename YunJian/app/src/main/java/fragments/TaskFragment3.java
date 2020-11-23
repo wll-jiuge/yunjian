@@ -84,10 +84,10 @@ public class TaskFragment3 extends Fragment {
         });*/
         //请求成功
         if(taskItemResponse!=null&&taskItemResponse.getCode() == 0){
-            List<TaskItemEntity> data = taskItemResponse.getList();
-            //传入数据
-            TaskAdapter taskAdapter = new TaskAdapter(getActivity(),data);
-            recyclerView.setAdapter(taskAdapter);
+//            List<TaskItemEntity> data = taskItemResponse.getList();
+//            //传入数据
+//            TaskAdapter taskAdapter = new TaskAdapter(getActivity(),data);
+//            recyclerView.setAdapter(taskAdapter);
         }
 
         return view;

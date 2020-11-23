@@ -152,7 +152,7 @@ public class Api {
     public void getRequestUseHeader(YJcallback callback){
         String url = getAppendUrl(requestUrl,mParams);
         Request request = new Request.Builder()
-                .addHeader("Authorization","login_token_89cd0213-c649-42cc-8af5-c540f60eca3d")
+                .addHeader("Authorization","login_token_542788ed-bab5-4def-8370-317a823adf78")
                 .url(url)
                 .get()
                 .build();
@@ -177,33 +177,6 @@ public class Api {
         });
     }
 
-    public void getRequestUseHeader(YJcallback callback){
-        String url = getAppendUrl(requestUrl,mParams);
-        Request request = new Request.Builder()
-                .addHeader("Authorization","login_token_2d2b2a39-d372-468e-a7f5-3a60cfd82dcf")
-                .url(url)
-                .get()
-                .build();
-//        构建call对象
-        Call call = client.newCall(request);
-//        异步get请求
-        call.enqueue(new Callback() {
-            //            请求失败
-            @Override
-            public void onFailure(Call call, IOException e) {
-//                Log.i("ttil",e.getMessage());
-                callback.onFailure(e);
-            }
-            //            请求成功
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-//                得到子线程
-                String result = response.body().string();
-//                Log.i("ttit",result);
-                callback.onSuccess(result);
-            }
-        });
-    }
 
     /**
      * 拼接get请求参数
